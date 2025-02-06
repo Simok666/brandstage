@@ -22,6 +22,7 @@ Route::get('/findSpace', [PageController::class, 'spacesection']);
 Route::get('/about', [PageController::class, 'aboutsection']);
 Route::get('/insights', [PageController::class, 'insightsection']);
 Route::get('/home', [PageController::class, 'homesection']);
+Route::get('/blog', [PageController::class, 'blogsection']);
 
 Route::post('/upload-image', function (Request $request) {
     if ($request->hasFile('file')) {

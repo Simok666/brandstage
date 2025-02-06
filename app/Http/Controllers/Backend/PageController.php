@@ -71,6 +71,18 @@ use DB;
 class PageController extends Controller
 {
     public function privacysection(Request $request, Terms $terms, Privacy $privacyy) {
+        $navbarNavLink = NavbarNavLinkResource::collection(
+            NavbarNavLink::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
+        $navbarSection = NavbarSectionResource::collection(
+            NavbarSection::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
         $dataPrivacy = PrivacyResource::collection(
             Privacy::when(request()->filled("id"), function ($query){
                 $query->where('id', request("id"));
@@ -83,13 +95,26 @@ class PageController extends Controller
             })->paginate($request->limit ?? "10")
         );
 
-        return view('privacy', compact('dataPrivacy', 'dataTerms'));
+        return view('privacy', compact('navbarNavLink', 'navbarSection' ,'dataPrivacy', 'dataTerms'));
     }
 
     public function brandsection (Request $request, 
      BrandsHero $brandsHero,
      BrandsSecondSection $brandsSecondSection, 
      BrandThirdSection $brandThirdSection) {
+
+        $navbarNavLink = NavbarNavLinkResource::collection(
+            NavbarNavLink::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
+        $navbarSection = NavbarSectionResource::collection(
+            NavbarSection::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
        $brandHero = BrandsHeroResource::collection(
             BrandsHero::when(request()->filled("id"), function ($query){
                 $query->where('id', request("id"));
@@ -138,7 +163,7 @@ class PageController extends Controller
             })->paginate($request->limit ?? "10")
         );
 
-        return view('brands', compact('brandHero',
+        return view('brands', compact('navbarNavLink', 'navbarSection','brandHero',
          'brandSecondSection', 'brandThirdSection', 
          'brandsFourthSectionHeadingButton', 'brandsFourthSectionIconDescription',
          'brandsFifthSection', 'brandsSixthSectionHeadingDescription',
@@ -146,6 +171,18 @@ class PageController extends Controller
     }
 
     public function spacesection(Request $request) {
+        $navbarNavLink = NavbarNavLinkResource::collection(
+            NavbarNavLink::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
+        $navbarSection = NavbarSectionResource::collection(
+            NavbarSection::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
        $dataSpaceHero = SpacesHeroResource::collection(
             SpaceHero::when(request()->filled("id"), function ($query){
                 $query->where('id', request("id"));
@@ -188,7 +225,7 @@ class PageController extends Controller
             })->paginate($request->limit ?? "10")
         );
 
-        return view('findSpace', compact('dataSpaceHero', 
+        return view('findSpace', compact('navbarNavLink','navbarSection','dataSpaceHero', 
         'dataSpaceSecondSectionHeading',
         'dataSpaceSecondSectionIcon',
         'dataSpaceThirdSection',
@@ -199,6 +236,17 @@ class PageController extends Controller
     }
 
     public function aboutsection(Request $request) {
+        $navbarNavLink = NavbarNavLinkResource::collection(
+            NavbarNavLink::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
+        $navbarSection = NavbarSectionResource::collection(
+            NavbarSection::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
         $dataAboutHero = AboutHeroResource::collection(
             AboutHero::when(request()->filled("id"), function ($query){
                 $query->where('id', request("id"));
@@ -229,7 +277,7 @@ class PageController extends Controller
             })->paginate($request->limit ?? "10")
         );
 
-        return view('about', compact('dataAboutHero', 
+        return view('about', compact('navbarNavLink', 'navbarSection','dataAboutHero', 
         'dataAboutSecond',
         'dataAboutThirdHeading',
         'dataAboutThirdIcon',
@@ -238,6 +286,18 @@ class PageController extends Controller
     }
 
     public function insightsection(Request $request) {
+        $navbarNavLink = NavbarNavLinkResource::collection(
+            NavbarNavLink::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
+        $navbarSection = NavbarSectionResource::collection(
+            NavbarSection::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
         $limit = $request->input('limit', 9);
         $page = $request->input('page', 1);
 
@@ -253,6 +313,8 @@ class PageController extends Controller
 
         return view('insights', [
             'dataInsight' => $dataInsight,
+            'navbarNavLink' => $navbarNavLink,
+            'navbarSection' => $navbarSection,
             'pagination' => [
                 'current_page' => $paginatedInsights->currentPage(),
                 'total_pages' => $paginatedInsights->lastPage(),
@@ -338,6 +400,23 @@ class PageController extends Controller
         );
 
         return view('privacy', compact('navbarNavLink', 'navbarSection'));
+    }
+
+    public function blogSection (Request $request) {
+        $navbarNavLink = NavbarNavLinkResource::collection(
+            NavbarNavLink::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
+        $navbarSection = NavbarSectionResource::collection(
+            NavbarSection::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
+        return view('blog', compact('navbarNavLink', 'navbarSection'));
+
     }
 
     /**
