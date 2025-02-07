@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class NavbarSectionResource extends JsonResource
+class HomeFourthHeadingSectionResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,7 +16,7 @@ class NavbarSectionResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'logo_text' => $this->logo_text,
+            'heading' => $this->heading,
         ];
     }
 }

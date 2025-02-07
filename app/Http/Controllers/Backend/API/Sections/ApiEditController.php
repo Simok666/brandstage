@@ -35,6 +35,8 @@ use App\Models\HomeFifthSection;
 use App\Models\HomeFourthSection;
 use App\Models\NavbarSection;
 use App\Models\NavbarNavLink;
+use App\Models\HomeThirdHeadingSection;
+use App\Models\HomeFourthHeadingSection;
 use App\Http\Resources\PrivacyResource;
 use App\Http\Resources\TermsResource;
 use App\Http\Resources\BrandsHeroResource;
@@ -66,6 +68,8 @@ use App\Http\Resources\HomeFifthResource;
 use App\Http\Resources\HomeFourthSectionResource;
 use App\Http\Resources\NavbarSectionResource;
 use App\Http\Resources\NavbarNavLinkResource;
+use App\Http\Resources\HomeFourthHeadingSectionResource;
+use App\Http\Resources\HomeThirdHeadingSectionResource;
 use DB;
 
 class ApiEditController extends Controller
@@ -1302,8 +1306,8 @@ class ApiEditController extends Controller
                   ],
                   [
                       'heading_first' => $item['heading_first'],
-                      'heading_middle' => $item['heading_middle'],
-                      'heading_third' => $item['heading_third'],
+                      'heading_middle' => $item['heading_middle'] ?? null,
+                      'heading_third' => $item['heading_third'] ?? null,
                       'description' => $item['description'],
                       'button_title' => $item['button_title'],
                       'button_link' => $item['button_link'],
@@ -1546,17 +1550,9 @@ class ApiEditController extends Controller
                       'id' => $item['id'] ?? null,
                   ],
                   [
-                      'signin_title' => $item['signin_title'],
-                      'signin_link' => $item['signin_link'],
+                      'logo_text' => $item['logo_text'],
                   ]
-              );
-
-              if($images_heroes = $item['logo_image']) {
-                foreach ($images_heroes as $image_hero) {
-                    $navbarSection->clearMediaCollection('logo_image');
-                    $navbarSection->addMedia($image_hero)->toMediaCollection('logo_image');
-                }
-            }
+              ); 
 
           DB::commit();
           });
@@ -1589,6 +1585,72 @@ class ApiEditController extends Controller
                   [
                       'navlink_title' => $item['navlink_title'],
                       'navlink_link' => $item['navlink_link'],
+                  ]
+              );
+
+          DB::commit();
+          });
+          return response()->json(['message' => 'data has been created or updated successfully'], 201);
+        } catch(\Illuminate\Database\QueryException $ex) {
+            DB::rollBack();
+            return response()->json(['error' => 'An error occurred creating data: ' . $ex->getMessage()], 400);
+        } catch(\Exception $e) {
+            DB::rollBack();
+            return response()->json(['error' => 'An error occurred while creating data: ' . $e->getMessage()], 400);
+        }
+    }
+
+    public function getHomeThirdHeadingSection (Request $request, HomeThirdHeadingSection $homeThirdHeadingSection) {
+        return HomeThirdHeadingSectionResource::collection(
+            HomeThirdHeadingSection::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+    }
+
+    public function homeThirdHeadingSection (Request $request, HomeThirdHeadingSection $homeThirdHeadingSection) {
+        try {
+          DB::beginTransaction();   
+          $data = collect($request->repeater)->map(function ($item) use ($homeThirdHeadingSection) {
+              $homeThirdHeadingSection = $homeThirdHeadingSection::updateOrCreate(
+                  [
+                      'id' => $item['id'] ?? null,
+                  ],
+                  [
+                      'heading' => $item['heading']
+                  ]
+              );
+
+          DB::commit();
+          });
+          return response()->json(['message' => 'data has been created or updated successfully'], 201);
+        } catch(\Illuminate\Database\QueryException $ex) {
+            DB::rollBack();
+            return response()->json(['error' => 'An error occurred creating data: ' . $ex->getMessage()], 400);
+        } catch(\Exception $e) {
+            DB::rollBack();
+            return response()->json(['error' => 'An error occurred while creating data: ' . $e->getMessage()], 400);
+        }
+    }
+
+    public function getHomeFourthHeadingSection (Request $request, HomeFourthHeadingSection $homeFourthHeadingSection) {
+        return HomeFourthHeadingSectionResource::collection(
+            HomeFourthHeadingSection::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+    }
+
+    public function homeFourthHeadingSection (Request $request, HomeFourthHeadingSection $homeFourthHeadingSection) {
+        try {
+          DB::beginTransaction();   
+          $data = collect($request->repeater)->map(function ($item) use ($homeFourthHeadingSection) {
+              $homeFourthHeadingSection = $homeFourthHeadingSection::updateOrCreate(
+                  [
+                      'id' => $item['id'] ?? null,
+                  ],
+                  [
+                      'heading' => $item['heading']
                   ]
               );
 

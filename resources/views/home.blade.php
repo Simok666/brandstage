@@ -46,6 +46,12 @@
             z-index: 10;
         }
 
+        .logo-text {
+            color: #f5f5f5;
+            font-size: 25px;
+            font-weight: 300;
+        }
+
         .logo {
             width: 59px;
             flex: 0 auto;
@@ -877,7 +883,7 @@
     /* Main Footer Content */
     .footer-content {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 2rem;
         padding: 4rem 2rem;
         max-width: 1200px;
@@ -990,7 +996,7 @@
 <body>
     <nav class="navbar">
         <a href="{{ url('home') }}" class="brand-2 w-nav-brand">
-            <img src="{{ $navbarSection[0] == null ? 'https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/6254546d8db27f74685239b7_logo-blue.svg' : $navbarSection[0]->getFirstMedia('logo_image')->getUrl() }}" alt="Logo" class="logo">
+            <span class="logo-text">{{ $navbarSection[0] == null ? 'BrandStage' : $navbarSection[0]->logo_text }}</span>
         </a>
         <div class="nav-links w-nav-menu">
             @if(count($navbarNavLink) == 0)
@@ -1007,7 +1013,7 @@
                 @endforeach
             @endif
 
-            <a href="{{ $navbarSection[0] == null ? '#' : $navbarSection[0]->signin_link }}" class="sign-in outline">{{ $navbarSection[0] == null ? 'Sign In' : $navbarSection[0]->signin_title }}</a>
+            <!-- <a href="{{ $navbarSection[0] == null ? '#' : $navbarSection[0]->signin_link }}" class="sign-in outline">{{ $navbarSection[0] == null ? 'Sign In' : $navbarSection[0]->signin_title }}</a> -->
         </div>
     </nav>
 
@@ -1018,18 +1024,35 @@
             <div class="w-layout-grid grid-9">
                 <div id="w-node-_47afa798-7739-4392-8a89-cca5c4af91ee-38e12690" class="hero-content-wrap">
                     <div class="div-block-5">
-                        <h1 class="h1_new largeer dark commerce retail">{{ $dataHomeHeroHeading[0]->heading_first ?? "retail"}}</h1>
-                        <h1 class="h1_new largeer dark commerce worth">{{ $dataHomeHeroHeading[0]->heading_middle ?? "worth"}}<br></h1>
-                        <h1 class="h1_new largeer dark bottom-margin-36">{{ $dataHomeHeroHeading[0]->heading_third?? "sharing"}}</h1>
+                        @if($dataHomeHeroHeading[0] == null)
+                        <h1 class="h1_new largeer dark commerce retail">
+                            Retail
+                        </h1>
+                        <h1 class="h1_new largeer dark commerce worth">worth<br></h1>
+                        <h1 class="h1_new largeer dark bottom-margin-36">sharing</h1>
+                        @else
+                        <h1 class="h1_new largeer dark commerce retail">
+                        {!! html_entity_decode($dataHomeHeroHeading[0]->heading_first) !!}
+                        </h1>
+                        @endif
+                        
                     </div>   
+                    @if($dataHomeHeroHeading[0] == null)
+                    <p class="paragraph-3">
+                    Creating space for connection --
+                    <br>
+                    where any brand can access retail today.
+                    </p>
+                    @else
+                    <p class="paragraph-3">
+                    {!! html_entity_decode($dataHomeHeroHeading[0]->description) !!}
+
+                    </p>
+                    @endif
+
                     <a href="{{ $dataHomeHeroHeading[0]->button_link ?? 'https://forms.gle/CDTL2EAs32W2BG5t5'}} " class="find-space large-beta black_outline-2 w-button">
                     {{ $dataHomeHeroHeading[0]->button_title ?? "Find My Space"}}
                     </a>
-                    <p class="paragraph-3">
-                        Creating space for connection --
-                        <br>
-                        where any brand can access retail today.
-                    </p>
                 </div>
                 <!-- <div class="swiper">
                         
@@ -1162,7 +1185,7 @@
     </section>
 
     <section class="partnerships">
-        <h2 class="section-title">Types of partnerships</h2>
+        <h2 class="section-title">{{ $dataHomeThirdHeading[0] == null ? 'Types of partnerships' : $dataHomeThirdHeading[0]->heading }}</h2>
         <div class="partnership-grid">
             @if(count($dataHomeThirdSection) == 0)
             <!-- Product Collabs -->
@@ -1218,7 +1241,7 @@
     </section>
 
     <section class="collections">
-        <h1 class="collections-main_locl-collections-main__content__explore__title__ErX9G">Explore Collections</h1>
+        <h1 class="collections-main_locl-collections-main__content__explore__title__ErX9G">{{ $dataHomeFourthHeading[0] == null ? 'Explore Collections' : $dataHomeFourthHeading[0]->heading }}</h1>
         @if(count($homeFourthSection) == 0)
         <div class="collections-main_locl-collections-main__content__explore__collections__YCKQa">
             <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf">
@@ -1598,34 +1621,38 @@
         <div class="footer-content">
             <!-- Brand Section -->
             <div class="footer-section">
-                <h3>BrandPartner</h3>
+                <h3>BrandStage</h3>
                 <div class="social-icons">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <!-- <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a>
+                    <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a> -->
                 </div>
-            </div>
-
-            <!-- Platform Section -->
-            <div class="footer-section">
-                <h3>Platform</h3>
-                <ul>
-                    <li><a href="#">How It Works</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
             </div>
 
             <!-- Company Section -->
             <div class="footer-section">
-                <h3>Company</h3>
+                <h3>Company Information</h3>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Careers</a></li>
+                    <li><a href="{{url('about')}}">About Us</a></li>
                     <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Section -->
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="{{url('brands')}}">For Brands</a></li>
+                    <li><a href="{{url('findSpace')}}">For Spaces</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="{{url('insights')}}">Insights</a></li>
                 </ul>
             </div>
 
@@ -1633,17 +1660,15 @@
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                    <li><a href="#">GDPR</a></li>
+                    <li><a href="{{url('privacy')}}">Privacy Policy </a></li>
+                    <li><a href="{{url('privacy')}}">Terms of Service </a></li>
                 </ul>
             </div>
         </div>
 
         <!-- Copyright -->
         <div class="copyright">
-            <p>© 2024 BrandPartner. All rights reserved.</p>
+            <p>© 2024 BrandStage. All rights reserved.</p>
         </div>
     </footer>
     

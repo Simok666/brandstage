@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('navbar_sections', function (Blueprint $table) {
+        Schema::create('home_third_heading_sections', function (Blueprint $table) {
             $table->id();
-            $table->text('logo_text')->nullable();
+            $table->text('heading')->nullable();
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('navbar_sections');
+        Schema::dropIfExists('home_third_heading_sections');
     }
 };

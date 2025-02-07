@@ -50,6 +50,12 @@
             z-index: 10;
         }
 
+        .logo-text {
+            color: #f5f5f5;
+            font-size: 25px;
+            font-weight: 300;
+        }
+
         .logo {
             width: 59px;
             flex: 0 auto;
@@ -359,7 +365,7 @@
     /* Main Footer Content */
     .footer-content {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 2rem;
         padding: 4rem 2rem;
         max-width: 1200px;
@@ -1195,7 +1201,7 @@
 <body>
     <nav class="navbar">
     <a href="{{ url('home') }}" class="brand-2 w-nav-brand">
-            <img src="{{ $navbarSection[0] == null ? 'https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/6254546d8db27f74685239b7_logo-blue.svg' : $navbarSection[0]->getFirstMedia('logo_image')->getUrl() }}" alt="Logo" class="logo">
+    <span class="logo-text">{{ $navbarSection[0] == null ? 'BrandStage' : $navbarSection[0]->logo_text }}</span>
         </a>
         <div class="nav-links w-nav-menu">
             @if(count($navbarNavLink) == 0)
@@ -1212,7 +1218,7 @@
                 @endforeach
             @endif
 
-            <a href="{{ $navbarSection[0] == null ? '#' : $navbarSection[0]->signin_link }}" class="sign-in outline">{{ $navbarSection[0] == null ? 'Sign In' : $navbarSection[0]->signin_title }}</a>
+            <!-- <a href="{{ $navbarSection[0] == null ? '#' : $navbarSection[0]->signin_link }}" class="sign-in outline">{{ $navbarSection[0] == null ? 'Sign In' : $navbarSection[0]->signin_title }}</a> -->
         </div>
     </nav>
 
@@ -1259,14 +1265,16 @@
                             @if ( $brand == '' )
                             Discover top venues & vendors together
                             @else 
-                            {{ $brand->heading }}
+                            {!! html_entity_decode($brand->heading) !!}
+                            <!-- {{ $brand->heading }} -->
                             @endif
                         </h1>
                         <p class="brands__description">
                             @if ( $brand == '' )
                             With The Vendry Teams, your organization can unlock new tools to search, save, and share venues and vendors for all your events.
                             @else 
-                            {{ $brand->description }}
+                            {!! html_entity_decode($brand->description) !!}
+                            <!-- {{ $brand->description }} -->
                             @endif
                         </p>
                         <a href="{{ $brand->button_link }}" class="brands__cta-button">
@@ -1363,19 +1371,35 @@
             <div id="w-node-d7f9fa13-7c3f-6adc-0132-6638a57fd2da-38e12690" class="v-contaner-wrapper mobile">
                 
                 <h3 class="h3_new meet_retell">
-                    {{ $second->heading_first_text ?? "Meet" }}
-                    <strong>{{ $second->heading_strong_text ?? "re/tell" }}</strong>
-                    {{ $second->heading_second_text ?? ".We" }}
-                    <span class="underline_v">{{ $second->heading_underlined_first_text ?? "match your brand" }}</span>
-                    {{ $second->heading_third_text ?? "with" }}
-                    <span class="underline_v">{{ $second->heading_underlined_second_text ?? "excess space" }}</span>
-                    {{ $second->heading_fourth_text ?? "inside high traffic retail destinations." }}
+                    {!! html_entity_decode($second->heading_first_text) !!}
+                    <!-- {{ $second->heading_first_text ?? "Meet" }} -->
+                    <strong>
+                    {!! html_entity_decode($second->heading_strong_text) !!}
+
+                        <!-- {{ $second->heading_strong_text ?? "re/tell" }} -->
+                    </strong>
+                    {!! html_entity_decode($second->heading_second_text) !!}
+                    <!-- {{ $second->heading_second_text ?? ".We" }} -->
+                    <span class="underline_v">
+                    {!! html_entity_decode($second->heading_underlined_first_text) !!}
+
+                        <!-- {{ $second->heading_underlined_first_text ?? "match your brand" }} -->
+                    </span>
+                    {!! html_entity_decode($second->heading_third_text) !!}
+                    <!-- {{ $second->heading_third_text ?? "with" }} -->
+                    <span class="underline_v">
+                    {!! html_entity_decode($second->heading_underlined_second_text) !!}
+                        <!-- {{ $second->heading_underlined_second_text ?? "excess space" }} -->
+                    </span>
+                    {!! html_entity_decode($second->heading_fourth_text) !!}
+                    <!-- {{ $second->heading_fourth_text ?? "inside high traffic retail destinations." }} -->
                     
                 </h3>
                 
 
                 <p class="paragraph_new _35-bottom-space">
-                {{ $second->description ?? "Each space has a built-in community. With just 25 sq/ft your brand can easily scale your retail presence any where that your target customer works, lives, travels, shops, and plays." }}
+                {!! html_entity_decode($second->description) !!}
+                <!-- {{ $second->description ?? "Each space has a built-in community. With just 25 sq/ft your brand can easily scale your retail presence any where that your target customer works, lives, travels, shops, and plays." }} -->
                 </p>
                 
                 <div class="w-layout-grid grid-12">
@@ -1476,19 +1500,26 @@
             @foreach($brandThirdSection as $index => $third) 
             <div id="Brand-Start" class="title-wrap w-node-af785f74-462c-d3d2-a2f9-6bb8b1fa7d21-38e12690">
                 <h3 class="h3_new irl">
-                    {{ $third->heading }}
+                 {!! html_entity_decode($third->heading) !!}
+                    <!-- {{ $third->heading }} -->
                 </h3>
             </div>
             <div class="for-brands-wrapper">
                 <div id="Brand-Section" class="for-brands-inside">
                     <div class="side-text">
                         <h3 class="h3_new">
-                            <span class="underline_v">{{ $third->vertical_text }}</span>
+                            <span class="underline_v">
+                            {!! html_entity_decode($third->vertical_text) !!}
+
+                                <!-- {{ $third->vertical_text }} -->
+                            </span>
                         </h3>
                     </div>
                     <img class="image-21" width="100" src="https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/6070d02b5737f511ebe126ff_green%20squiggle.png" alt="">
                     <p class="paragraph_new">
-                     {{ $third->description }}
+                    {!! html_entity_decode($third->description) !!}
+                        
+                     <!-- {{ $third->description }} -->
                     </p>
                     <div class="w-layout-grid grid-11">
                         <div id="w-node-_6908daec-7568-e92c-8359-52ad8c5dcc1d-38e12690" class="white-circle-icon">
@@ -1537,7 +1568,14 @@
 
     <div class="brands-popup__container">
         
-        <h2 class="brands-popup__title">{{ $brandsFourthSectionHeadingButton[0]->heading ?? "SO WHAT EXACTLY DO WE DO?"}} </h2>
+        <h2 class="brands-popup__title">
+            @if($brandsFourthSectionHeadingButton[0] == null)
+            SO WHAT EXACTLY DO WE DO?
+            @else
+            {!! html_entity_decode($brandsFourthSectionHeadingButton[0]->heading) !!}
+            @endif
+            <!-- {{ $brandsFourthSectionHeadingButton[0]->heading ?? "SO WHAT EXACTLY DO WE DO?"}}  -->
+        </h2>
         
         <div class="brands-popup__services">
             @if(count ($brandsFourthSectionIconDescription) == 0)
@@ -1610,8 +1648,15 @@
                 <div class="brands-popup__icon">
                     <img src="{{ $fourth->getFirstMedia('icon_image')->getUrl() }}" alt="Chat bubble icon" class="brands-popup__icon-image">
                 </div>
-                <h3 class="brands-popup__service-title">{{ $fourth->heading }}</h3>
-                <p class="brands-popup__service-description">{{ $fourth->description }}</p>
+                <h3 class="brands-popup__service-title">
+                    {!! html_entity_decode($fourth->heading) !!}
+                    <!-- {{ $fourth->heading }} -->
+                </h3>
+                <p class="brands-popup__service-description">
+                {!! html_entity_decode($fourth->description) !!}
+
+                    <!-- {{ $fourth->description }} -->
+                </p>
             </div>
                 @endforeach
             @endif
@@ -1630,7 +1675,8 @@
             @if(count($brandsFifthSection) == 0 )
              Grow your business with The Vendry.<br>All for free!
             @else
-             {{ $brandsFifthSection[0]->heading}}
+            {!! html_entity_decode($brandsFifthSection[0]->heading) !!}
+             <!-- {{ $brandsFifthSection[0]->heading}} -->
              @endif
         </h2>
         <a href="{{ $brandsFifthSection[0]->button_link ??  'https://forms.gle/yaJ4mNeDPuxnMsgo9 '}} ">
@@ -1640,8 +1686,24 @@
 
     <section class="space-faq__section">
             <div class="space-faq__container">
-                <h1>{{ $brandsSixthSectionHeadingDescription[0]->heading ?? "SHOP FAQS"}}</h1>
-                <p class="space-faq__description">{{ $brandsSixthSectionHeadingDescription[0]->description ?? "Find answers to our most frequently asked questions below. If you can't find what you're looking for please contact us and we'll get in touch within 24 hours."}}</p>
+                <h1>
+                @if($brandsSixthSectionHeadingDescription[0] == null)
+                SHOP FAQS
+                @else
+                {!! html_entity_decode($brandsSixthSectionHeadingDescription[0]->heading) !!}
+                @endif
+                
+
+                </h1>
+                <p class="space-faq__description">
+                @if($brandsSixthSectionHeadingDescription[0] == null)
+                Find answers to our most frequently asked questions below. If you can't find what you're looking for please contact us and we'll get in touch within 24 hours.
+                @else
+                {!! html_entity_decode($brandsSixthSectionHeadingDescription[0]->description) !!}
+                @endif
+
+                    <!-- {{ $brandsSixthSectionHeadingDescription[0]->description ?? "Find answers to our most frequently asked questions below. If you can't find what you're looking for please contact us and we'll get in touch within 24 hours."}} -->
+                </p>
 
                 <div class="space-faq__accordion">
                     @if(count($brandsSixthSectionFAQ) == 0)
@@ -1708,13 +1770,21 @@
                         @foreach($brandsSixthSectionFAQ as $index => $sixth) 
                         <div class="space-faq__accordion-item">
                             <button class="space-faq__accordion-header">
-                                <span>{{ $sixth->question }}</span>
+                                <span>
+                                {!! html_entity_decode($sixth->question) !!}
+
+                                    <!-- {{ $sixth->question }} -->
+                                </span>
                                 <svg class="space-faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <div class="space-faq__accordion-content">
-                                <p>{{ $sixth->answer }}</p>
+                                <p>
+                                    {!! html_entity_decode($sixth->answer) !!}
+
+                                    <!-- {{ $sixth->answer }} -->
+                                </p>
                             </div>
                         </div>
                         @endforeach
@@ -1742,34 +1812,38 @@
         <div class="footer-content">
             <!-- Brand Section -->
             <div class="footer-section">
-                <h3>BrandPartner</h3>
+                <h3>BrandStage</h3>
                 <div class="social-icons">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <!-- <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a>
+                    <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a> -->
                 </div>
-            </div>
-
-            <!-- Platform Section -->
-            <div class="footer-section">
-                <h3>Platform</h3>
-                <ul>
-                    <li><a href="#">How It Works</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
             </div>
 
             <!-- Company Section -->
             <div class="footer-section">
-                <h3>Company</h3>
+                <h3>Company Information</h3>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Careers</a></li>
+                    <li><a href="{{url('about')}}">About Us</a></li>
                     <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Section -->
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="{{url('brands')}}">For Brands</a></li>
+                    <li><a href="{{url('findSpace')}}">For Spaces</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="{{url('insights')}}">Insights</a></li>
                 </ul>
             </div>
 
@@ -1777,17 +1851,15 @@
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                    <li><a href="#">GDPR</a></li>
+                    <li><a href="{{url('privacy')}}">Privacy Policy </a></li>
+                    <li><a href="{{url('privacy')}}">Terms of Service </a></li>
                 </ul>
             </div>
         </div>
 
         <!-- Copyright -->
         <div class="copyright">
-            <p>© 2024 BrandPartner. All rights reserved.</p>
+            <p>© 2024 BrandStage. All rights reserved.</p>
         </div>
     </footer>
 

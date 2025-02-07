@@ -60,7 +60,7 @@
                             <tr>
                                 <th scope="row">List Description</th>
                                 <td> 
-                                <textarea name="repeater[0][list_description]" placeholder="List Description" class="form-control" required> </textarea>
+                                <textarea name="repeater[0][list_description]" placeholder="List Description" class="form-control sumernote-perpustakaan" required> </textarea>
                                 </td>
                             </tr>
                             
@@ -179,7 +179,7 @@
                             <tr>
                                 <th>List Description</th>
                                 <td >
-                                    <textarea name="repeater[0][list_description]" value="" class="form-control" data-bind-list_description value=""></textarea>
+                                    <textarea name="repeater[0][list_description]" value="" class="form-control sumernote-perpustakaan-edit" data-bind-list_description value=""></textarea>
                                 </td>
                             </tr>
                         </tbody>
@@ -231,6 +231,22 @@
         return result;
     }
 
+    function settingSummerNote(selector) {
+        $(selector).summernote({
+            height: 200,
+            disableDragAndDrop: false,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear', 'fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph', 'lineHeight']],
+                ['insert', ['link', 'picture', 'video']],
+                ['misc', ['codeview']],
+            ],
+            
+        });
+    }
+
     $(document).on('click', '.btn-delete', function() {
                 const id = $(this).data('id');
                 
@@ -255,6 +271,7 @@
     $(document).on('click', '.btn-add-kategori', function() {
         $('#modal-add-kategori').modal('show');
         $('#modal-add-kategori').find('form')[0].reset();
+        settingSummerNote($(".sumernote-perpustakaan"))
     });
 
     $("#form-add-kategori").on('submit', function(e) {
@@ -289,6 +306,8 @@
                 if (index == "image") return;
                 $('#editKategori').find(`[data-bind-${index}]`).val(data).attr('value', data);
             });
+
+            settingSummerNote($(".sumernote-perpustakaan-edit"))
 
         },
         function() {

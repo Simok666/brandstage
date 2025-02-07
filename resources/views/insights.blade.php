@@ -46,6 +46,12 @@
             z-index: 10;
         }
 
+        .logo-text {
+            color: #f5f5f5;
+            font-size: 25px;
+            font-weight: 300;
+        }
+
         .logo {
             width: 59px;
             flex: 0 auto;
@@ -399,7 +405,7 @@
     /* Main Footer Content */
     .footer-content {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 2rem;
         padding: 4rem 2rem;
         max-width: 1200px;
@@ -491,7 +497,7 @@
 <body>
     <nav class="navbar">
     <a href="{{ url('home') }}" class="brand-2 w-nav-brand">
-            <img src="{{ $navbarSection[0] == null ? 'https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/6254546d8db27f74685239b7_logo-blue.svg' : $navbarSection[0]->getFirstMedia('logo_image')->getUrl() }}" alt="Logo" class="logo">
+        <span class="logo-text">{{ $navbarSection[0] == null ? 'BrandStage' : $navbarSection[0]->logo_text }}</span>
         </a>
         <div class="nav-links w-nav-menu">
             @if(count($navbarNavLink) == 0)
@@ -508,7 +514,7 @@
                 @endforeach
             @endif
 
-            <a href="{{ $navbarSection[0] == null ? '#' : $navbarSection[0]->signin_link }}" class="sign-in outline">{{ $navbarSection[0] == null ? 'Sign In' : $navbarSection[0]->signin_title }}</a>
+            <!-- <a href="{{ $navbarSection[0] == null ? '#' : $navbarSection[0]->signin_link }}" class="sign-in outline">{{ $navbarSection[0] == null ? 'Sign In' : $navbarSection[0]->signin_title }}</a> -->
         </div>
     </nav>
 
@@ -788,34 +794,38 @@
         <div class="footer-content">
             <!-- Brand Section -->
             <div class="footer-section">
-                <h3>BrandPartner</h3>
+                <h3>BrandStage</h3>
                 <div class="social-icons">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <!-- <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a>
+                    <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a> -->
                 </div>
-            </div>
-
-            <!-- Platform Section -->
-            <div class="footer-section">
-                <h3>Platform</h3>
-                <ul>
-                    <li><a href="#">How It Works</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
             </div>
 
             <!-- Company Section -->
             <div class="footer-section">
-                <h3>Company</h3>
+                <h3>Company Information</h3>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Careers</a></li>
+                    <li><a href="{{url('about')}}">About Us</a></li>
                     <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Section -->
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="{{url('brands')}}">For Brands</a></li>
+                    <li><a href="{{url('findSpace')}}">For Spaces</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="{{url('insights')}}">Insights</a></li>
                 </ul>
             </div>
 
@@ -823,17 +833,15 @@
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                    <li><a href="#">GDPR</a></li>
+                    <li><a href="{{url('privacy')}}">Privacy Policy </a></li>
+                    <li><a href="{{url('privacy')}}">Terms of Service </a></li>
                 </ul>
             </div>
         </div>
 
         <!-- Copyright -->
         <div class="copyright">
-            <p>© 2024 BrandPartner. All rights reserved.</p>
+            <p>© 2024 BrandStage. All rights reserved.</p>
         </div>
     </footer>
     

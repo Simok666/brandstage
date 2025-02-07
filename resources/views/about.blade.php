@@ -46,6 +46,12 @@
             z-index: 10;
         }
 
+        .logo-text {
+            color: #f5f5f5;
+            font-size: 25px;
+            font-weight: 300;
+        }
+
         .logo {
             width: 59px;
             flex: 0 auto;
@@ -826,7 +832,7 @@
     /* Main Footer Content */
     .footer-content {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 2rem;
         padding: 4rem 2rem;
         max-width: 1200px;
@@ -918,8 +924,8 @@
 <body>
     <nav class="navbar">
     <a href="{{ url('home') }}" class="brand-2 w-nav-brand">
-            <img src="{{ $navbarSection[0] == null ? 'https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/6254546d8db27f74685239b7_logo-blue.svg' : $navbarSection[0]->getFirstMedia('logo_image')->getUrl() }}" alt="Logo" class="logo">
-        </a>
+        <span class="logo-text">{{ $navbarSection[0] == null ? 'BrandStage' : $navbarSection[0]->logo_text }}</span>
+    </a>
         <div class="nav-links w-nav-menu">
             @if(count($navbarNavLink) == 0)
             <a href="{{ url('brands') }}" class="nav-link w-nav-link">Brands</a>
@@ -935,7 +941,7 @@
                 @endforeach
             @endif
 
-            <a href="{{ $navbarSection[0] == null ? '#' : $navbarSection[0]->signin_link }}" class="sign-in outline">{{ $navbarSection[0] == null ? 'Sign In' : $navbarSection[0]->signin_title }}</a>
+            <!-- <a href="{{ $navbarSection[0] == null ? '#' : $navbarSection[0]->signin_link }}" class="sign-in outline">{{ $navbarSection[0] == null ? 'Sign In' : $navbarSection[0]->signin_title }}</a> -->
         </div>
     </nav>
 
@@ -957,8 +963,16 @@
             <img src="{{ $data->getFirstMedia('left_image')->getUrl() }}" alt="Products Left">
             </div>
             <div class="content">
-                <div class="greeting">{{ $data->heading }}</div>
-                <h1 class="headline">{{ $data->description }}</h1>
+                <div class="greeting">
+                {!! html_entity_decode($data->heading) !!}
+
+                    <!-- {{ $data->heading }} -->
+                </div>
+                <h1 class="headline">
+                {!! html_entity_decode($data->description) !!}
+
+                    <!-- {{ $data->description }} -->
+                </h1>
             </div>
             <div class="products-right">
                 <img src="{{ $data->getFirstMedia('right_image')->getUrl() }}" alt="Products Right">
@@ -1033,19 +1047,41 @@
             <div id="w-node-d7f9fa13-7c3f-6adc-0132-6638a57fd2da-38e12690" class="v-contaner-wrapper mobile">
                 
                 <h3 class="h3_new meet_retell">
-                    {{ $second->heading_first_text ?? "Meet" }}
-                    <strong>{{ $second->heading_strong_text ?? "re/tell" }}</strong>
-                    {{ $second->heading_second_text ?? ".We" }}
-                    <span class="underline_v">{{ $second->heading_underlined_first_text ?? "match your brand" }}</span>
-                    {{ $second->heading_third_text ?? "with" }}
-                    <span class="underline_v">{{ $second->heading_underlined_second_text ?? "excess space" }}</span>
-                    {{ $second->heading_fourth_text ?? "inside high traffic retail destinations." }}
+                    {!! html_entity_decode($second->heading_first_text) ?? "Meet" !!}
+
+                    <!-- {{ $second->heading_first_text ?? "Meet" }} -->
+                    <strong>
+                    {!! html_entity_decode($second->heading_strong_text) ?? "re/tell" !!}
+
+                        <!-- {{ $second->heading_strong_text ?? "re/tell" }} -->
+                    </strong>
+                    {!! html_entity_decode($second->heading_second_text) ?? ".We" !!}
+
+                    <!-- {{ $second->heading_second_text ?? ".We" }} -->
+                    <span class="underline_v">
+                    {!! html_entity_decode($second->heading_underlined_first_text) ?? "match your brand" !!}
+
+                        <!-- {{ $second->heading_underlined_first_text ?? "match your brand" }} -->
+                    </span>
+                    {!! html_entity_decode($second->heading_third_text) ?? "with" !!}
+
+                    <!-- {{ $second->heading_third_text ?? "with" }} -->
+                    <span class="underline_v">
+                    {!! html_entity_decode($second->heading_underlined_second_text) ?? "excess space" !!}
+
+                        <!-- {{ $second->heading_underlined_second_text ?? "excess space" }} -->
+                    </span>
+                    {!! html_entity_decode($second->heading_fourth_text) ?? "inside high traffic retail destinations." !!}
+
+                    <!-- {{ $second->heading_fourth_text ?? "inside high traffic retail destinations." }} -->
                     
                 </h3>
                 
 
                 <p class="paragraph_new _35-bottom-space">
-                {{ $second->description ?? "Each space has a built-in community. With just 25 sq/ft your brand can easily scale your retail presence any where that your target customer works, lives, travels, shops, and plays." }}
+                {!! html_entity_decode($second->description) ?? "Each space has a built-in community. With just 25 sq/ft your brand can easily scale your retail presence any where that your target customer works, lives, travels, shops, and plays." !!}
+                
+                <!-- {{ $second->description ?? "Each space has a built-in community. With just 25 sq/ft your brand can easily scale your retail presence any where that your target customer works, lives, travels, shops, and plays." }} -->
                 </p>
                 
                 <div class="w-layout-grid grid-12">
@@ -1087,9 +1123,24 @@
 
     <div class="about__container">
         <section class="about__section">
-            <h2 class="about__heading">{{ $dataAboutThirdHeading[0]->heading ?? "Who is Breezy for?" }}</h2>
+            <h2 class="about__heading">
+            @if($dataAboutThirdHeading[0] == null)
+            Who is Breezy for?
+                    @else
+                    {!! html_entity_decode($dataAboutThirdHeading[0]->heading)!!}
+                    @endif
+            
+
+                <!-- {{ $dataAboutThirdHeading[0]->heading ?? "Who is Breezy for?" }} -->
+            </h2>
             <p class="about__description">
-                {{ $dataAboutThirdHeading[0]->description ?? "Our customers are a diverse range of partnership managers, marketing managers, CEOs, growth managers and founders who are looking to self-grow their business." }}
+            @if($dataAboutThirdHeading[0] == null)
+            Our customers are a diverse range of partnership managers, marketing managers, CEOs, growth managers and founders who are looking to self-grow their business.
+                    @else
+                    {!! html_entity_decode($dataAboutThirdHeading[0]->description)!!}
+                    @endif
+            
+                <!-- {{ $dataAboutThirdHeading[0]->description ?? "Our customers are a diverse range of partnership managers, marketing managers, CEOs, growth managers and founders who are looking to self-grow their business." }} -->
             </p>
         </section>
     </div>
@@ -1133,8 +1184,16 @@
                 <div class="about__icon-wrapper">
                     <img src="{{ $data->getFirstMedia('icon_image')->getUrl() }}" alt="" class="about__icon">
                 </div>
-                <h3 class="about__feature-title">{{ $data->heading }}</h3>
-                <p class="about__feature-description">{{ $data->description }}</p>
+                <h3 class="about__feature-title">
+                    {!! html_entity_decode($data->heading) !!}
+
+                    <!-- {{ $data->heading }} -->
+                </h3>
+                <p class="about__feature-description">
+                {!! html_entity_decode($data->description) !!}
+
+                    <!-- {{ $data->description }} -->
+                </p>
             </div>
             @endforeach
         @endif
@@ -1180,9 +1239,18 @@
             @else
                 @foreach($dataAboutFourthSection as $data)
                 <div class="about-contact__section">
-                    <h2 class="about-contact__title">{{ $data->heading }}</h2>
+                    <h2 class="about-contact__title">
+                     {!! html_entity_decode($data->heading) !!}
+
+                        <!-- {{ $data->heading }} -->
+                    </h2>
                     <div class="about-contact__info">
-                        <p>{{ $data->description }}</p>
+                        <p>
+                        {!! html_entity_decode($data->description) !!}
+
+                            <!-- {{ $data->description }} -->
+
+                        </p>
                         <a href="mailto:support@xolo.io" class="about-contact__email-link">{{ $data->email_text }}</a>
                     </div>
                 </div>
@@ -1228,34 +1296,38 @@
         <div class="footer-content">
             <!-- Brand Section -->
             <div class="footer-section">
-                <h3>BrandPartner</h3>
+                <h3>BrandStage</h3>
                 <div class="social-icons">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <!-- <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a>
+                    <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a> -->
                 </div>
-            </div>
-
-            <!-- Platform Section -->
-            <div class="footer-section">
-                <h3>Platform</h3>
-                <ul>
-                    <li><a href="#">How It Works</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
             </div>
 
             <!-- Company Section -->
             <div class="footer-section">
-                <h3>Company</h3>
+                <h3>Company Information</h3>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Careers</a></li>
+                    <li><a href="{{url('about')}}">About Us</a></li>
                     <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Section -->
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="{{url('brands')}}">For Brands</a></li>
+                    <li><a href="{{url('findSpace')}}">For Spaces</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="{{url('insights')}}">Insights</a></li>
                 </ul>
             </div>
 
@@ -1263,17 +1335,15 @@
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                    <li><a href="#">GDPR</a></li>
+                    <li><a href="{{url('privacy')}}">Privacy Policy </a></li>
+                    <li><a href="{{url('privacy')}}">Terms of Service </a></li>
                 </ul>
             </div>
         </div>
 
         <!-- Copyright -->
         <div class="copyright">
-            <p>© 2024 BrandPartner. All rights reserved.</p>
+            <p>© 2024 BrandStage. All rights reserved.</p>
         </div>
     </footer>
     

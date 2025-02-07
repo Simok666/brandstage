@@ -3,6 +3,11 @@
 @section('title', 'Brands Fifth Section')
 @section('title_page', 'Brands Fifth Section')
 @section('desc_page', 'Edit Content Brands Fifth Section')
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('admin/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
+
+    <link rel="stylesheet" href="{{ asset("admin/vendors/summernote/summernote-lite.min.css") }}">
+@endsection
 @section('content')
 <div class="card">
     <div class="card-header">
@@ -38,7 +43,9 @@
                             <tr>
                                 <th>Heading</th>
                                 <td>
-                                    <input type="text" name="repeater[0][heading]" class="form-control">
+                                    <textarea type="text" name="repeater[0][heading]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading]" class="form-control"> -->
                                 </td>
                             </tr>
                             <tr>
@@ -100,7 +107,9 @@
                                 <th>Heading</th>
                                 <td >
                                     <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value="">
-                                    <input type="text" name="repeater[0][heading]" value="" class="form-control" data-bind-heading value="">
+                                    <textarea type="text" name="repeater[0][heading]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading value=""></textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading]" value="" class="form-control" data-bind-heading value=""> -->
                                 </td>
                             </tr>
                             <tr>
@@ -136,6 +145,7 @@
 </div>
 @endsection
 @section('scripts')
+<script src="{{ asset('admin/vendors/summernote/summernote-lite.min.js') }}"></script>
 <script>
     $(document).ready(function() {
         GetData(req,"brands_fifth_sections", formatfifthsection);
@@ -159,6 +169,22 @@
         return result;
     }
 
+    function settingSummerNote(selector) {
+        $(selector).summernote({
+            height: 200,
+            disableDragAndDrop: false,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear', 'fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph', 'lineHeight']],
+                ['insert', ['link', 'picture', 'video']],
+                ['misc', ['codeview']],
+            ],
+            
+        });
+    }
+
     $(document).on('click', '.openPopup', function() {
         window.open($(this).attr('link'), 'popup', 'width=800,height=600');
     })
@@ -172,6 +198,8 @@
     $(document).on('click', '.btn-add-kategori', function() {
         $('#modal-add-kategori').modal('show');
         $('#modal-add-kategori').find('form')[0].reset();
+        settingSummerNote($(".sumernote-perpustakaan"))
+
     });
 
     $("#form-add-kategori").on('submit', function(e) {
@@ -242,6 +270,7 @@
                 $('#editKategori').find(`[data-bind-${index}]`).val(data).attr('value', data);
             });
 
+            settingSummerNote($(".sumernote-perpustakaan-edit"))
         },
         function() {
             loading($("#editKategori"));

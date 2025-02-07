@@ -35,6 +35,8 @@ use App\Models\HomeFourthSection;
 use App\Models\HomeFifthSection;
 use App\Models\NavbarSection;
 use App\Models\NavbarNavLink;
+use App\Models\HomeThirdHeadingSection;
+use App\Models\HomeFourthHeadingSection;
 use App\Http\Resources\PrivacyResource;
 use App\Http\Resources\TermsResource;
 use App\Http\Resources\BrandsHeroResource;
@@ -66,6 +68,8 @@ use App\Http\Resources\HomeFifthResource;
 use App\Http\Resources\HomeFourthSectionResource;
 use App\Http\Resources\NavbarSectionResource;
 use App\Http\Resources\NavbarNavLinkResource;
+use App\Http\Resources\HomeThirdHeadingSectionResource;
+use App\Http\Resources\HomeFourthHeadingSectionResource;
 use DB;
 
 class PageController extends Controller
@@ -365,11 +369,24 @@ class PageController extends Controller
             })->paginate($request->limit ?? "10")
         );
 
+        $dataHomeThirdHeading = HomeThirdHeadingSectionResource::collection(
+            HomeThirdHeadingSection::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
         $homeFourthSection = HomeFourthSectionResource::collection(
             HomeFourthSection::when(request()->filled("id"), function ($query){
                 $query->where('id', request("id"));
             })->paginate($request->limit ?? "10")
         );
+
+        $dataHomeFourthHeading =  HomeFourthHeadingSectionResource::collection(
+            HomeFourthHeadingSection::when(request()->filled("id"), function ($query){
+                $query->where('id', request("id"));
+            })->paginate($request->limit ?? "10")
+        );
+
 
         $homeFifthSection = HomeFifthResource::collection(
             HomeFifthSection::when(request()->filled("id"), function ($query){
@@ -382,7 +399,9 @@ class PageController extends Controller
         'dataHomeHeroImageSlider',
         'dataHomeSecondSection',
         'dataHomeThirdSection',
+        'dataHomeThirdHeading',
         'homeFourthSection',
+        'dataHomeFourthHeading',
         'homeFifthSection'));
     }
 

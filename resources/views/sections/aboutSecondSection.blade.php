@@ -3,6 +3,11 @@
 @section('title', 'About Second Sections')
 @section('title_page', 'About Second Sections')
 @section('desc_page', 'Edit Content About Second Sections')
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('admin/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
+
+    <link rel="stylesheet" href="{{ asset("admin/vendors/summernote/summernote-lite.min.css") }}">
+@endsection
 @section('content')
 <div class="card">
     <div class="card-header">
@@ -38,49 +43,65 @@
                             <tr>
                                 <th>Heading First Text</th>
                                 <td>
-                                    <input type="text" name="repeater[0][heading_first_text]" class="form-control">
+                                <textarea type="text" name="repeater[0][heading_first_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading_first_text]" class="form-control"> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Heading Strong Text</th>
                                 <td>
-                                    <textarea type="text" name="repeater[0][heading_strong_text]" class="form-control" rows="3">  </textarea>
+                                <textarea type="text" name="repeater[0][heading_strong_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <textarea type="text" name="repeater[0][heading_strong_text]" class="form-control" rows="3">  </textarea> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Heading Second Text</th>
                                 <td>
-                                    <input type="text" name="repeater[0][heading_second_text]" class="form-control">
+                                <textarea type="text" name="repeater[0][heading_second_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading_second_text]" class="form-control"> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Heading Underlined first Text</th>
                                 <td>
-                                    <input type="text" name="repeater[0][heading_underlined_first_text]" class="form-control">
+                                <textarea type="text" name="repeater[0][heading_underlined_first_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading_underlined_first_text]" class="form-control"> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Heading Third Text</th>
                                 <td>
-                                    <input type="text" name="repeater[0][heading_third_text]" class="form-control">
+                                <textarea type="text" name="repeater[0][heading_third_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading_third_text]" class="form-control"> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Heading Underlined Second Text</th>
                                 <td>
-                                    <input type="text" name="repeater[0][heading_underlined_second_text]" class="form-control">
+                                <textarea type="text" name="repeater[0][heading_underlined_second_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading_underlined_second_text]" class="form-control"> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Heading Fourth Text</th>
                                 <td>
-                                    <input type="text" name="repeater[0][heading_fourth_text]" class="form-control">
+                                <textarea type="text" name="repeater[0][heading_fourth_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading_fourth_text]" class="form-control"> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Description</th>
                                 <td>
-                                    <input type="text" name="repeater[0][description]" class="form-control">
+                                <textarea type="text" name="repeater[0][description]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <input type="text" name="repeater[0][description]" class="form-control"> -->
                                 </td>
                             </tr>
                             <tr>
@@ -320,56 +341,65 @@
                                 <th>Heading First Text</th>
                                 <td >
                                     <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value="">
-                                    <input type="text" name="repeater[0][heading_first_text]" value="" class="form-control" data-bind-heading_first_text value="">
+                                    <textarea type="text" name="repeater[0][heading_first_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_first_text value=""></textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading_first_text]" value="" class="form-control" data-bind-heading_first_text value=""> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Heading Strong Text</th>
                                 <td >
-                                    <!-- <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value=""> -->
-                                    <textarea type="text" name="repeater[0][heading_strong_text]" value="" class="form-control" rows="3" data-bind-heading_strong_text value=""></textarea>
+                                <textarea type="text" name="repeater[0][heading_strong_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_strong_text value=""></textarea>
+
+                                    <!-- <textarea type="text" name="repeater[0][heading_strong_text]" value="" class="form-control" rows="3" data-bind-heading_strong_text value=""></textarea> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Heading Second Text</th>
                                 <td >
-                                    <!-- <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value=""> -->
-                                    <input type="text" name="repeater[0][heading_second_text]" value="" class="form-control" data-bind-heading_second_text value="">
+                                <textarea type="text" name="repeater[0][heading_second_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_second_text value=""></textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading_second_text]" value="" class="form-control" data-bind-heading_second_text value=""> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Heading Underlined First Text</th>
                                 <td >
-                                    <!-- <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value=""> -->
-                                    <input type="text" name="repeater[0][heading_underlined_first_text]" value="" class="form-control" data-bind-heading_underlined_first_text value="">
+                                <textarea type="text" name="repeater[0][heading_underlined_first_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_underlined_first_text value=""></textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading_underlined_first_text]" value="" class="form-control" data-bind-heading_underlined_first_text value=""> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Heading Third Text</th>
                                 <td >
-                                    <!-- <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value=""> -->
-                                    <input type="text" name="repeater[0][heading_third_text]" value="" class="form-control" data-bind-heading_third_text value="">
+                                <textarea type="text" name="repeater[0][heading_third_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_third_text value=""></textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading_third_text]" value="" class="form-control" data-bind-heading_third_text value=""> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Heading Underlined Second Text</th>
                                 <td >
-                                    <!-- <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value=""> -->
-                                    <input type="text" name="repeater[0][heading_underlined_second_text]" value="" class="form-control" data-bind-heading_underlined_second_text value="">
+                                <textarea type="text" name="repeater[0][heading_underlined_second_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_underlined_second_text value=""></textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading_underlined_second_text]" value="" class="form-control" data-bind-heading_underlined_second_text value=""> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Heading Fourth Text</th>
                                 <td >
-                                    <!-- <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value=""> -->
-                                    <input type="text" name="repeater[0][heading_fourth_text]" value="" class="form-control" data-bind-heading_fourth_text value="">
+                                <textarea type="text" name="repeater[0][heading_fourth_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_fourth_text value=""></textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading_fourth_text]" value="" class="form-control" data-bind-heading_fourth_text value=""> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Description</th>
                                 <td >
-                                    <!-- <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value=""> -->
-                                    <input type="text" name="repeater[0][description]" value="" class="form-control" data-bind-description value="">
+                                <textarea type="text" name="repeater[0][description]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-description value=""></textarea>
+
+                                    <!-- <input type="text" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""> -->
                                 </td>
                             </tr>
                             <tr>
@@ -465,6 +495,8 @@
 </div>
 @endsection
 @section('scripts')
+<script src="{{ asset('admin/vendors/summernote/summernote-lite.min.js') }}"></script>
+
 <script>
     $(document).ready(function() {
         GetData(req,"about_second_sections", formataboutsecondsection);
@@ -489,6 +521,22 @@
         return result;
     }
 
+    function settingSummerNote(selector) {
+        $(selector).summernote({
+            height: 200,
+            disableDragAndDrop: false,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear', 'fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph', 'lineHeight']],
+                ['insert', ['link', 'picture', 'video']],
+                ['misc', ['codeview']],
+            ],
+            
+        });
+    }
+
     $(document).on('click', '.openPopup', function() {
         window.open($(this).attr('link'), 'popup', 'width=800,height=600');
     })
@@ -502,6 +550,8 @@
     $(document).on('click', '.btn-add-kategori', function() {
         $('#modal-add-kategori').modal('show');
         $('#modal-add-kategori').find('form')[0].reset();
+        settingSummerNote($(".sumernote-perpustakaan"))
+
     });
 
     $("#form-add-kategori").on('submit', function(e) {
@@ -607,6 +657,9 @@
                 if (index == "image") return;
                 $('#editKategori').find(`[data-bind-${index}]`).val(data).attr('value', data);
             });
+
+        settingSummerNote($(".sumernote-perpustakaan-edit"))
+
 
         },
         function() {

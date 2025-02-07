@@ -124,6 +124,12 @@ Route::middleware(['auth:sanctum', 'type.admin'])->group(function () {
         Route::get('admin/navbarNavLink', [ApiEditController::class, 'getNavbarNavLink']);
         Route::Post('admin/addOrUpdateNavbarNavLink', [ApiEditController::class, 'navbarNavLink']);
 
+        Route::get('admin/homeThirdHeadingSection', [ApiEditController::class, 'getHomeThirdHeadingSection']);
+        Route::Post('admin/addOrUpdateHomeThirdHeading', [ApiEditController::class, 'homeThirdHeadingSection']);
+
+        Route::get('admin/homeFourthHeadingSection', [ApiEditController::class, 'getHomeFourthHeadingSection']);
+        Route::Post('admin/addOrUpdateHomeFourthHeading', [ApiEditController::class, 'homeFourthHeadingSection']);
+
     });
 });
 

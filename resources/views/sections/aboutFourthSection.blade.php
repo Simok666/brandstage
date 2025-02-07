@@ -43,13 +43,17 @@
                             <tr>
                                 <th scope="row">Heading</th>
                                 <td> 
-                                <input type="text" name="repeater[0][heading]" class="form-control" required> 
+                                <textarea type="text" name="repeater[0][heading]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                <!-- <input type="text" name="repeater[0][heading]" class="form-control" required>  -->
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">Description</th>
                                 <td> 
-                                <textarea name="repeater[0][description]" class="form-control" required> </textarea>
+                                <textarea type="text" name="repeater[0][description]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                <!-- <textarea name="repeater[0][description]" class="form-control" required> </textarea> -->
                                 </td>
                             </tr>
                             <tr>
@@ -154,13 +158,17 @@
                                 <th>Heading</th>
                                 <td >
                                     <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value="">
-                                    <input type="text" name="repeater[0][heading]" value="" class="form-control" data-bind-heading value="">
+                                    <textarea type="text" name="repeater[0][heading]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading value=""></textarea>
+
+                                    <!-- <input type="text" name="repeater[0][heading]" value="" class="form-control" data-bind-heading value=""> -->
                                 </td>
                             </tr>
                             <tr>
                                 <th>Description</th>
                                 <td >
-                                    <textarea name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea>
+                                    <textarea type="text" name="repeater[0][description]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-description value=""></textarea>
+
+                                    <!-- <textarea name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea> -->
                                 </td>
                             </tr>
                             <tr>
@@ -218,9 +226,27 @@
         return result;
     }
 
+    function settingSummerNote(selector) {
+        $(selector).summernote({
+            height: 200,
+            disableDragAndDrop: false,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear', 'fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph', 'lineHeight']],
+                ['insert', ['link', 'picture', 'video']],
+                ['misc', ['codeview']],
+            ],
+            
+        });
+    }
+
     $(document).on('click', '.btn-add-kategori', function() {
         $('#modal-add-kategori').modal('show');
         $('#modal-add-kategori').find('form')[0].reset();
+        settingSummerNote($(".sumernote-perpustakaan"))
+
     });
 
     $("#form-add-kategori").on('submit', function(e) {
@@ -255,6 +281,9 @@
                 if (index == "image") return;
                 $('#editKategori').find(`[data-bind-${index}]`).val(data).attr('value', data);
             });
+
+            settingSummerNote($(".sumernote-perpustakaan-edit"))
+
 
         },
         function() {

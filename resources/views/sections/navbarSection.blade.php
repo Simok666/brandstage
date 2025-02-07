@@ -6,14 +6,12 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h4 class="card-title">Navbar Logo and Sign-in Section</h4>
-        <button type="submit" style="float: right" class="btn btn-primary btn-add-kategori">Add Navbar Logo and SignIn</button>
+        <h4 class="card-title">Navbar Logo Text</h4>
+        <button type="submit" style="float: right" class="btn btn-primary btn-add-kategori">Add Navbar Logo Text</button>
     </div>
     <div class="card-body">
         @include('components.table-pagination', ['table' => 'navbar_sections' , 'url' => '/api/v1/admin/navbarSection' , 'headers' => [
-            "Singin Title",
-            "Signin Link",
-            "Logo Image",
+            "Logo Text",
             "Action"
         ] , 'pagination' => true])
     </div>
@@ -51,21 +49,9 @@
                     <table class="table table-striped table-komponent after-loading">
                         <tbody>
                             <tr>
-                                <th>SignIn Title</th>
+                                <th>Logo Text</th>
                                 <td>
-                                    <input type="text" name="repeater[0][signin_title]" class="form-control">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>SigIn Link</th>
-                                <td>
-                                    <input type="text" name="repeater[0][signin_link]" class="form-control">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Logo Image</th>
-                                <td> 
-                                    <input type="file" name="repeater[0][logo_image][]" class="form-control" accept="image/*" required > 
+                                    <input type="text" name="repeater[0][logo_text]" class="form-control">
                                 </td>
                             </tr>
                         </tbody>
@@ -141,7 +127,7 @@
         <div class="modal-content">
             <div class="modal-header bg-info">
                 <h5 class="modal-title white" id="">
-                    Edit Navbar Logo and Signin
+                    Edit Navbar Logo Text
                 </h5>
                 <button type="button" class="close" data-bs-dismiss="modal"
                     aria-label="Close">
@@ -159,22 +145,10 @@
                     <table class="table table-striped after-loading">
                         <tbody>
                             <tr>
-                                <th>Sign In Title</th>
+                                <th>Logo Text</th>
                                 <td >
                                     <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value="">
-                                    <input type="text" name="repeater[0][signin_title]" value="" class="form-control" data-bind-signin_title value="">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Sign In Link</th>
-                                <td >
-                                    <input type="text" name="repeater[0][signin_link]" value="" class="form-control" data-bind-signin_link value="">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Logo Image</th>
-                                <td> 
-                                    <input type="file" name="repeater[0][logo_image][]" class="form-control" accept="image/*" required > 
+                                    <input type="text" name="repeater[0][logo_text]" value="" class="form-control" data-bind-logo_text value="">
                                 </td>
                             </tr>
                         </tbody>
@@ -263,9 +237,7 @@
             
             result += `
                 <tr>
-                    <td>${data.signin_title}</td>
-                    <td>${data.signin_link}</td>
-                    <td>${!empty(data.logo_image) ? `<a href="#" class="openPopup" link="${data.logo_image[0].url}">View File</a> `: "-"}</td>
+                    <td>${data.logo_text}</td>
                     <td>
                         <a href="#" class="btn btn-warning btn-icon btn-sm btn-edit" title="Detail" data-id="${data.id}"><span class="bi bi-pencil"> </span></a>
                     </td>

@@ -46,6 +46,12 @@
             z-index: 10;
         }
 
+        .logo-text {
+            color: #f5f5f5;
+            font-size: 25px;
+            font-weight: 300;
+        }
+
         .logo {
             width: 59px;
             flex: 0 auto;
@@ -758,7 +764,7 @@
     /* Main Footer Content */
     .footer-content {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 2rem;
         padding: 4rem 2rem;
         max-width: 1200px;
@@ -871,7 +877,7 @@
 <body>
     <nav class="navbar">
     <a href="{{ url('home') }}" class="brand-2 w-nav-brand">
-            <img src="{{ $navbarSection[0] == null ? 'https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/6254546d8db27f74685239b7_logo-blue.svg' : $navbarSection[0]->getFirstMedia('logo_image')->getUrl() }}" alt="Logo" class="logo">
+        <span class="logo-text">{{ $navbarSection[0] == null ? 'BrandStage' : $navbarSection[0]->logo_text }}</span>
         </a>
         <div class="nav-links w-nav-menu">
             @if(count($navbarNavLink) == 0)
@@ -888,15 +894,31 @@
                 @endforeach
             @endif
 
-            <a href="{{ $navbarSection[0] == null ? '#' : $navbarSection[0]->signin_link }}" class="sign-in outline">{{ $navbarSection[0] == null ? 'Sign In' : $navbarSection[0]->signin_title }}</a>
+            <!-- <a href="{{ $navbarSection[0] == null ? '#' : $navbarSection[0]->signin_link }}" class="sign-in outline">{{ $navbarSection[0] == null ? 'Sign In' : $navbarSection[0]->signin_title }}</a> -->
         </div>
     </nav>
 
     <section class="space__hero">
         <div class="space__hero-content">
             <div class="space__hero-text">
-                <h1>{{ $dataSpaceHero[0]->heading ?? "Grow your business with The Vendry" }}</h1>
-                <p>{{ $dataSpaceHero[0]->description ??  "Showcase your offerings and portfolio of previous work, get your name in front of the brands and companies you want to reach, and respond to leads and inquiries with our simple, powerful tools. All for free!"}}</p>
+                <h1>
+                    @if($dataSpaceHero[0] == null)
+                    Grow your business with The Vendry
+                    @else
+                    {!! html_entity_decode($dataSpaceHero[0]->heading)!!}
+                    @endif
+                    <!-- {{ $dataSpaceHero[0]->heading ?? "Grow your business with The Vendry" }} -->
+                </h1>
+                <p>
+                    @if($dataSpaceHero[0] == null)
+                    Showcase your offerings and portfolio of previous work, get your name in front of the brands and companies you want to reach, and respond to leads and inquiries with our simple, powerful tools. All for free!
+                    @else
+                    {!! html_entity_decode($dataSpaceHero[0]->description)!!}
+                    @endif
+                
+
+                    <!-- {{ $dataSpaceHero[0]->description ??  "Showcase your offerings and portfolio of previous work, get your name in front of the brands and companies you want to reach, and respond to leads and inquiries with our simple, powerful tools. All for free!"}} -->
+                </p>
                 <a href="{{ $dataSpaceHero[0]->button_link ?? '#' }}">
                     <button class="space__cta-button">{{ $dataSpaceHero[0]->button_title ?? "ADD YOUR BUSINESS"}} </button>
                 </a>
@@ -916,9 +938,25 @@
     <section class="space__partner-features">
         <div class="space__container">
             <header class="space__section-header">
-                <h2>{{ $dataSpaceSecondSectionHeading[0]->heading ?? "Reasons to partner with MultiCo" }}</h2>
+                <h2>
+                    @if($dataSpaceSecondSectionHeading[0] == null)
+                    Reasons to partner with MultiCo
+                    @else
+                    {!! html_entity_decode($dataSpaceSecondSectionHeading[0]->heading)!!}
+                    @endif
+                    <!-- {{ $dataSpaceSecondSectionHeading[0]->heading ?? "Reasons to partner with MultiCo" }} -->
+                </h2>
                 <div class="space__section-description">
-                    <p>{{ $dataSpaceSecondSectionHeading[0]->description ?? "MultiCo is a unique concept offering our members venues to work and meet."}}</p>
+
+                    <p>
+                    @if($dataSpaceSecondSectionHeading[0] == null)
+                    MultiCo is a unique concept offering our members venues to work and meet.
+                    @else
+                    {!! html_entity_decode($dataSpaceSecondSectionHeading[0]->description)!!}
+                    @endif
+                    
+                        <!-- {{ $dataSpaceSecondSectionHeading[0]->description ?? "MultiCo is a unique concept offering our members venues to work and meet."}} -->
+                    </p>
                     <!-- <p>Our membership is growing so we want perfect venues for our members to work and spend money.</p> -->
                 </div>
             </header>
@@ -1007,8 +1045,17 @@
                     <div class="space__feature-icon">
                         <img src="{{ $data->getFirstMedia('icon_image')->getUrl() }}" alt="">
                     </div>
-                    <h3>{{ $data->heading }}</h3>
-                    <p> {{ $data->description }}</p>
+                    <h3>
+                    {!! html_entity_decode($data->heading)!!}
+
+                        <!-- {{ $data->heading }} -->
+
+                    </h3>
+                    <p>
+                    {!! html_entity_decode($data->description)!!}
+
+                        <!-- {{ $data->description }} -->
+                    </p>
                 </div>
                  @endforeach
                 @endif
@@ -1019,8 +1066,25 @@
     <section class="space-learn__hero">
         <div class="space-learn__hero-content">
             <div class="space-learn__hero-text">
-                <h1>{{ $dataSpaceThirdSection[0]->heading ?? "The world's art collectors, all in one place"}}</h1>
-                <p>{{ $dataSpaceThirdSection[0]->description ?? "Across the globe, 3 million+ art enthusiasts use Artsy to discover and buy art with confidence and ease. From New York to Seoul, a collective of 5 million social media followers engage with Artsy's editorial, curatorial, and social content." }}</p>
+                <h1>
+                    @if($dataSpaceThirdSection[0] == null)
+                    The world's art collectors, all in one place
+                    @else
+                    {!! html_entity_decode($dataSpaceThirdSection[0]->heading)!!}
+                    @endif
+                    
+
+                    <!-- {{ $dataSpaceThirdSection[0]->heading ?? "The world's art collectors, all in one place"}} -->
+                </h1>
+                <p>
+                    @if($dataSpaceThirdSection[0] == null)
+                    Across the globe, 3 million+ art enthusiasts use Artsy to discover and buy art with confidence and ease. From New York to Seoul, a collective of 5 million social media followers engage with Artsy's editorial, curatorial, and social content.
+                    @else
+                    {!! html_entity_decode($dataSpaceThirdSection[0]->description)!!}
+                    @endif
+                    
+                    <!-- {{ $dataSpaceThirdSection[0]->description ?? "Across the globe, 3 million+ art enthusiasts use Artsy to discover and buy art with confidence and ease. From New York to Seoul, a collective of 5 million social media followers engage with Artsy's editorial, curatorial, and social content." }} -->
+                </p>
                 <a href="{{ $dataSpaceThirdSection[0]->button_link ?? '#'}}" class="space-learn__cta-button">{{ $dataSpaceThirdSection[0]->button_title ?? "Learn More"}}</a>
             </div>
             <div class="space-learn__hero-image">
@@ -1043,7 +1107,15 @@
                 <path d="M6 9L12 15L18 9" stroke="#8A2BE2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
-        <h2>{{ $dataSpaceFourthSection[0]->heading ?? "Grow your business with The Vendry." }}</h2>
+        <h2>
+        @if($dataSpaceFourthSection[0] == null)
+        Grow your business with The Vendry.
+                    @else
+                    {!! html_entity_decode($dataSpaceFourthSection[0]->heading)!!}
+                    @endif
+        
+            <!-- {{ $dataSpaceFourthSection[0]->heading ?? "Grow your business with The Vendry." }} -->
+        </h2>
         <a href="{{ $dataSpaceFourthSection[0]->button_link ?? 'https://forms.gle/yaJ4mNeDPuxnMsgo9' }}">
             <button class="space__cta-button">{{ $dataSpaceFourthSection[0]->button_title ?? "ADD YOUR BUSSINES"}}</button>
         </a>
@@ -1052,8 +1124,26 @@
 
     <section class="space-faq__section">
             <div class="space-faq__container">
-                <h1>{{ $dataSpaceFifthSectionHeading[0]->heading ?? "SHOP FAQS"}}</h1>
-                <p class="space-faq__description">{{ $dataSpaceFifthSectionHeading[0]->description ?? "Find answers to our most frequently asked questions below. If you can't find what you're looking for please contact us and we'll get in touch within 24 hours."}}</p>
+                <h1>
+                @if($dataSpaceFifthSectionHeading[0] == null)
+                SHOP FAQS
+                    @else
+                    {!! html_entity_decode($dataSpaceFifthSectionHeading[0]->heading)!!}
+                    @endif
+                
+
+                <!-- {{ $dataSpaceFifthSectionHeading[0]->heading ?? "SHOP FAQS"}} -->
+
+                </h1>
+                <p class="space-faq__description">
+                    @if($dataSpaceFifthSectionHeading[0] == null)
+                    Find answers to our most frequently asked questions below. If you can't find what you're looking for please contact us and we'll get in touch within 24 hours.
+                    @else
+                    {!! html_entity_decode($dataSpaceFifthSectionHeading[0]->description)!!}
+                    @endif
+                    
+                    <!-- {{ $dataSpaceFifthSectionHeading[0]->description ?? "Find answers to our most frequently asked questions below. If you can't find what you're looking for please contact us and we'll get in touch within 24 hours."}} -->
+                </p>
 
                 <div class="space-faq__accordion">
                     @if(count($dataSpaceFifthSectionFAQ) == 0)
@@ -1120,13 +1210,23 @@
                         @foreach($dataSpaceFifthSectionFAQ as $index => $sixth) 
                         <div class="space-faq__accordion-item">
                             <button class="space-faq__accordion-header">
-                                <span>{{ $sixth->question }}</span>
+                                <span>
+                                {!! html_entity_decode($sixth->question) !!}
+                                    
+                                <!-- {{ $sixth->question }} -->
+
+                                </span>
                                 <svg class="space-faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <div class="space-faq__accordion-content">
-                                <p>{{ $sixth->answer }}</p>
+                                <p>
+                                {!! html_entity_decode($sixth->answer) !!}
+                                    
+                                <!-- {{ $sixth->answer }} -->
+                                    
+                                </p>
                             </div>
                         </div>
                         @endforeach
@@ -1154,34 +1254,38 @@
         <div class="footer-content">
             <!-- Brand Section -->
             <div class="footer-section">
-                <h3>BrandPartner</h3>
+                <h3>BrandStage</h3>
                 <div class="social-icons">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <!-- <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a>
+                    <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a> -->
                 </div>
-            </div>
-
-            <!-- Platform Section -->
-            <div class="footer-section">
-                <h3>Platform</h3>
-                <ul>
-                    <li><a href="#">How It Works</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
             </div>
 
             <!-- Company Section -->
             <div class="footer-section">
-                <h3>Company</h3>
+                <h3>Company Information</h3>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Careers</a></li>
+                    <li><a href="{{url('about')}}">About Us</a></li>
                     <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Section -->
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="{{url('brands')}}">For Brands</a></li>
+                    <li><a href="{{url('findSpace')}}">For Spaces</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="{{url('insights')}}">Insights</a></li>
                 </ul>
             </div>
 
@@ -1189,17 +1293,15 @@
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                    <li><a href="#">GDPR</a></li>
+                    <li><a href="{{url('privacy')}}">Privacy Policy </a></li>
+                    <li><a href="{{url('privacy')}}">Terms of Service </a></li>
                 </ul>
             </div>
         </div>
 
         <!-- Copyright -->
         <div class="copyright">
-            <p>© 2024 BrandPartner. All rights reserved.</p>
+            <p>© 2024 BrandStage. All rights reserved.</p>
         </div>
     </footer>
     

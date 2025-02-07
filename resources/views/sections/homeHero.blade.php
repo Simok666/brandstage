@@ -3,6 +3,11 @@
 @section('title', 'Home Hero Section')
 @section('title_page', 'Home Hero Section')
 @section('desc_page', 'Edit Content Home Hero Section')
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('admin/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
+
+    <link rel="stylesheet" href="{{ asset("admin/vendors/summernote/summernote-lite.min.css") }}">
+@endsection
 @section('content')
 <div class="card">
     <div class="card-header">
@@ -53,12 +58,13 @@
                     <table class="table table-striped table-komponent after-loading">
                         <tbody>
                             <tr>
-                                <th>Heading First</th>
+                                <th>Heading</th>
                                 <td>
-                                    <input type="text" name="repeater[0][heading_first]" class="form-control">
+                                    <textarea type="text" name="repeater[0][heading_first]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+                                    <!-- <input type="text" name="repeater[0][heading_first]" class="form-control"> -->
                                 </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th>Heading Middle</th>
                                 <td>
                                     <input type="text" name="repeater[0][heading_middle]" class="form-control">
@@ -69,11 +75,13 @@
                                 <td>
                                     <input type="text" name="repeater[0][heading_third]" class="form-control">
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <th>Description</th>
                                 <td>
-                                    <textarea rows="3" name="repeater[0][description]" class="form-control"></textarea>
+                                <textarea type="text" name="repeater[0][description]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" class="form-control"></textarea> -->
                                 </td>
                             </tr>
                             <tr>
@@ -180,13 +188,15 @@
                     <table class="table table-striped after-loading">
                         <tbody>
                             <tr>
-                                <th>Heading First</th>
+                                <th>Heading</th>
                                 <td >
                                     <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value="">
-                                    <input type="text" name="repeater[0][heading_first]" value="" class="form-control" data-bind-heading_first value="">
+                                    <textarea type="text" name="repeater[0][heading_first]" class="form-control sumernote-perpustakaan-edit" data-bind-heading_first value="" rows="3">  </textarea>
+                                    
+                                    <!-- <input type="text" name="repeater[0][heading_first]" value="" class="form-control" data-bind-heading_first value=""> -->
                                 </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th>Heading Middle</th>
                                 <td >
                                     <input type="text" name="repeater[0][heading_middle]" value="" class="form-control" data-bind-heading_middle value="">
@@ -197,11 +207,13 @@
                                 <td >
                                     <input type="text" name="repeater[0][heading_third]" value="" class="form-control" data-bind-heading_third value="">
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <th>Description</th>
                                 <td >
-                                    <textarea rows="3" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea>
+                                <textarea type="text" name="repeater[0][description]" class="form-control sumernote-perpustakaan-edit" data-bind-description value="" rows="3">  </textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea> -->
                                 </td>
                             </tr
                             <tr>
@@ -292,6 +304,8 @@
 </div>
 @endsection
 @section('scripts')
+<script src="{{ asset('admin/vendors/summernote/summernote-lite.min.js') }}"></script>
+
 <script>
     $(document).ready(function() {
         
@@ -338,15 +352,33 @@
         window.open($(this).attr('link'), 'popup', 'width=800,height=600');
     })
 
+    function settingSummerNote(selector) {
+        $(selector).summernote({
+            height: 200,
+            disableDragAndDrop: false,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear', 'fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph', 'lineHeight']],
+                ['insert', ['link', 'picture', 'video']],
+                ['misc', ['codeview']],
+            ],
+            
+        });
+    }
 
     $(document).on('click', '.btn-add-kategori', function() {
         $('#modal-add-kategori').modal('show');
         $('#modal-add-kategori').find('form')[0].reset();
+        settingSummerNote($(".sumernote-perpustakaan"))
+
     });
 
     $(document).on('click', '.btn-add-kategori-2', function() {
         $('#modal-add-kategori-2').modal('show');
         $('#modal-add-kategori-2').find('form')[0].reset();
+        
     });
 
     $("#form-add-kategori").on('submit', function(e) {
@@ -432,6 +464,8 @@
                 if (index == "image") return;
                 $('#editKategori').find(`[data-bind-${index}]`).val(data).attr('value', data);
             });
+
+        settingSummerNote($(".sumernote-perpustakaan-edit"))
 
         },
         function() {
