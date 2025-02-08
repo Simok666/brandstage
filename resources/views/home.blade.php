@@ -1421,7 +1421,7 @@
                         <img class="collections-main_locl-collections-main__content__explore__box__image__wZMwT" width ="320" height="340" src="{{ $homeFourthSection[1] == null ? '' : $homeFourthSection[1]->getFirstMedia('blog_image')->getUrl() }}" alt="">
                         <div class="collections-main_locl-collections-main__content__explore__box__info__KKZfx">
                             <h3 class="collections-main_locl-collections-main__content__explore__box__title__ISDOd">
-                            {{ $homeFourthSection[1] == null ? 'second title' : $homeFourthSection[1]->second_title }}
+                            {{ $homeFourthSection[1] == null ? 'second title' : $homeFourthSection[1]->first_title }}
                             </h3>
                         </div>
                         <div class="collections-main_locl-collections-main__content__explore__box__caption__ZsUpD">
