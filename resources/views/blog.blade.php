@@ -756,7 +756,7 @@
     
     <footer class="footer">
         <!-- Newsletter Section -->
-        <div class="newsletter">
+        <!-- <div class="newsletter">
             <div class="newsletter-content">
                 <h2>Newsletter</h2>
                 <p>Stay In The Loop. Get the latest resources, updates and discounts to your inbox</p>
@@ -765,7 +765,7 @@
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
-        </div>
+        </div> -->
 
         <!-- Main Footer Content -->
         <div class="footer-content">
@@ -817,9 +817,9 @@
         </div>
 
         <!-- Copyright -->
-        <div class="copyright">
+        <!-- <div class="copyright">
             <p>© 2024 BrandStage. All rights reserved.</p>
-        </div>
+        </div> -->
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('admin/vendors/toastify/toastify.js') }}"></script>
@@ -904,14 +904,10 @@
                                             </article>
                                             <div class="margin-top margin-xlarge">
                                                 <div class="blog-author_component">
-                                                    <a class="blog-author_image w-inline-block" href="https://www.mural.co/profile/brett-lalli">
-                                                        <img class="image_asset" src="https://cdn.prod.website-files.com/63062129119620a44791a2eb/67462cf9d655077dd65aef28_T024JF7B3-U07QZV9EJ4Q-baa2eca98356-512.webp" alt="">
-                                                    </a>
+                                                    
                                                     <div class="author_content-wrapper">
                                                         <a href="" class="text-size-large text-weight-medium hover-opacity">${resp.data.published_by}</a>
-                                                        <div class="text-size-normal">
-                                                        Brett is a freelance blogger and editor at Mural. Her approach to writing (and life) is one of continuous learning, insatiable curiosity, idealism, free-flowing iced coffee, and deep connection with teams, people, ideas, art, and nature.
-                                                        </div>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>

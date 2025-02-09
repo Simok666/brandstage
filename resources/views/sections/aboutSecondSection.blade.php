@@ -16,9 +16,8 @@
     </div>
     <div class="card-body">
         @include('components.table-pagination', ['table' => 'about_second_sections' , 'url' => '/api/v1/admin/aboutSecondSection' , 'headers' => [
-            "Heading First Text",
-            "Heading Strong Text",
-            "Heading Second Text",
+            "Heading",
+            "Description",
             "Action"
         ] , 'pagination' => true])
     </div>
@@ -41,19 +40,17 @@
                     <table class="table table-striped table-komponent after-loading">
                         <tbody>
                             <tr>
-                                <th>Heading First Text</th>
+                                <th>Heading</th>
                                 <td>
                                 <textarea type="text" name="repeater[0][heading_first_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
-
-                                    <!-- <input type="text" name="repeater[0][heading_first_text]" class="form-control"> -->
                                 </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th>Heading Strong Text</th>
                                 <td>
                                 <textarea type="text" name="repeater[0][heading_strong_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
 
-                                    <!-- <textarea type="text" name="repeater[0][heading_strong_text]" class="form-control" rows="3">  </textarea> -->
+                                   
                                 </td>
                             </tr>
                             <tr>
@@ -61,7 +58,7 @@
                                 <td>
                                 <textarea type="text" name="repeater[0][heading_second_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
 
-                                    <!-- <input type="text" name="repeater[0][heading_second_text]" class="form-control"> -->
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -69,7 +66,7 @@
                                 <td>
                                 <textarea type="text" name="repeater[0][heading_underlined_first_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
 
-                                    <!-- <input type="text" name="repeater[0][heading_underlined_first_text]" class="form-control"> -->
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -77,7 +74,7 @@
                                 <td>
                                 <textarea type="text" name="repeater[0][heading_third_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
 
-                                    <!-- <input type="text" name="repeater[0][heading_third_text]" class="form-control"> -->
+                                   
                                 </td>
                             </tr>
                             <tr>
@@ -85,7 +82,7 @@
                                 <td>
                                 <textarea type="text" name="repeater[0][heading_underlined_second_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
 
-                                    <!-- <input type="text" name="repeater[0][heading_underlined_second_text]" class="form-control"> -->
+                                   
                                 </td>
                             </tr>
                             <tr>
@@ -93,15 +90,15 @@
                                 <td>
                                 <textarea type="text" name="repeater[0][heading_fourth_text]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
 
-                                    <!-- <input type="text" name="repeater[0][heading_fourth_text]" class="form-control"> -->
+                                   
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <th>Description</th>
                                 <td>
                                 <textarea type="text" name="repeater[0][description]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
 
-                                    <!-- <input type="text" name="repeater[0][description]" class="form-control"> -->
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -122,7 +119,7 @@
                                     <input type="file" name="repeater[0][first_image][]" class="form-control" accept="image/*" required > 
                                 </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th scope="row">Second Image</th>
                                 <td> 
                                     <input type="file" name="repeater[0][second_image][]" class="form-control" accept="image/*" required > 
@@ -175,7 +172,7 @@
                                 <td> 
                                     <input type="file" name="repeater[0][icon_image_7][]" class="form-control" accept="image/*" required > 
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </form>
@@ -218,10 +215,10 @@
                 <table class="table table-striped after-loading">
                     <tbody>
                         <tr>
-                            <th>Heading First Text</th>
+                            <th>Heading</th>
                             <td data-bind-heading_first_text></td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <th>Heading Strong Text</th>
                             <td data-bind-heading_strong_text></td>
                         </tr>
@@ -244,7 +241,7 @@
                         <tr>
                             <th>Heading Fourth Text</th>
                             <td data-bind-heading_fourth_text></td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <th>Description</th>
                             <td data-bind-description></td>
@@ -261,7 +258,7 @@
                             <th>First Image</th>
                             <td data-bind-first_image></td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <th>Second Image</th>
                             <td data-bind-second_image></td>
                         </tr>
@@ -296,7 +293,7 @@
                         <tr>
                             <th>Icon Image 7</th>
                             <td data-bind-icon_image_7></td>
-                        </tr>
+                        </tr> -->
 
                         
                     </tbody>
@@ -338,20 +335,17 @@
                     <table class="table table-striped after-loading">
                         <tbody>
                             <tr>
-                                <th>Heading First Text</th>
+                                <th>Heading</th>
                                 <td >
                                     <input type="hidden" name="repeater[0][id]"  class="form-control" data-bind-id value="">
                                     <textarea type="text" name="repeater[0][heading_first_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_first_text value=""></textarea>
-
-                                    <!-- <input type="text" name="repeater[0][heading_first_text]" value="" class="form-control" data-bind-heading_first_text value=""> -->
                                 </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th>Heading Strong Text</th>
                                 <td >
                                 <textarea type="text" name="repeater[0][heading_strong_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_strong_text value=""></textarea>
 
-                                    <!-- <textarea type="text" name="repeater[0][heading_strong_text]" value="" class="form-control" rows="3" data-bind-heading_strong_text value=""></textarea> -->
                                 </td>
                             </tr>
                             <tr>
@@ -359,7 +353,6 @@
                                 <td >
                                 <textarea type="text" name="repeater[0][heading_second_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_second_text value=""></textarea>
 
-                                    <!-- <input type="text" name="repeater[0][heading_second_text]" value="" class="form-control" data-bind-heading_second_text value=""> -->
                                 </td>
                             </tr>
                             <tr>
@@ -367,7 +360,6 @@
                                 <td >
                                 <textarea type="text" name="repeater[0][heading_underlined_first_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_underlined_first_text value=""></textarea>
 
-                                    <!-- <input type="text" name="repeater[0][heading_underlined_first_text]" value="" class="form-control" data-bind-heading_underlined_first_text value=""> -->
                                 </td>
                             </tr>
                             <tr>
@@ -375,7 +367,6 @@
                                 <td >
                                 <textarea type="text" name="repeater[0][heading_third_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_third_text value=""></textarea>
 
-                                    <!-- <input type="text" name="repeater[0][heading_third_text]" value="" class="form-control" data-bind-heading_third_text value=""> -->
                                 </td>
                             </tr>
                             <tr>
@@ -383,7 +374,6 @@
                                 <td >
                                 <textarea type="text" name="repeater[0][heading_underlined_second_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_underlined_second_text value=""></textarea>
 
-                                    <!-- <input type="text" name="repeater[0][heading_underlined_second_text]" value="" class="form-control" data-bind-heading_underlined_second_text value=""> -->
                                 </td>
                             </tr>
                             <tr>
@@ -391,15 +381,15 @@
                                 <td >
                                 <textarea type="text" name="repeater[0][heading_fourth_text]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_fourth_text value=""></textarea>
 
-                                    <!-- <input type="text" name="repeater[0][heading_fourth_text]" value="" class="form-control" data-bind-heading_fourth_text value=""> -->
+                                  
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <th>Description</th>
                                 <td >
                                 <textarea type="text" name="repeater[0][description]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-description value=""></textarea>
 
-                                    <!-- <input type="text" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""> -->
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -422,7 +412,7 @@
                                     <input type="file" name="repeater[0][first_image][]" class="form-control" accept="image/*" required > 
                                 </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th scope="row">Second Image</th>
                                 <td> 
                                     <input type="file" name="repeater[0][second_image][]" class="form-control" accept="image/*" required > 
@@ -475,7 +465,7 @@
                                 <td> 
                                     <input type="file" name="repeater[0][icon_image_7][]" class="form-control" accept="image/*" required > 
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </form>
@@ -509,8 +499,7 @@
             result += `
                 <tr>
                     <td>${data.heading_first_text}</td>
-                    <td>${data.heading_strong_text}</td>
-                    <td>${data.heading_second_text}</td>
+                    <td>${data.description}</td>
                     <td>
                         <a href="#" class="btn btn-info btn-icon btn-sm btn-detail" title="Detail"  data-id="${data.id}"><span class="bi bi-info-circle"> </span></a>
                         <a href="#" class="btn btn-warning btn-icon btn-sm btn-edit" title="Detail" data-id="${data.id}"><span class="bi bi-pencil"> </span></a>
@@ -587,48 +576,48 @@
                 $('#detailKategori').find(`[data-bind-${index}]`).html(data);
             });
 
-            if (!empty(result.first_image) || !empty(result.second_image) || !empty(result.third_image)) {
+            if (!empty(result.first_image) ) {
                 result.first_image.forEach(function(image) {
                     $('#detailKategori').find('[data-bind-first_image]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
                 });
-                result.second_image.forEach(function(image) {
-                    $('#detailKategori').find('[data-bind-second_image]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
-                });
-                result.third_image.forEach(function(image) {
-                    $('#detailKategori').find('[data-bind-third_image]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
-                });
-                result.icon_image_1.forEach(function(image) {
-                    $('#detailKategori').find('[data-bind-icon_image_1]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
-                });
-                result.icon_image_2.forEach(function(image) {
-                    $('#detailKategori').find('[data-bind-icon_image_2]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
-                });
-                result.icon_image_3.forEach(function(image) {
-                    $('#detailKategori').find('[data-bind-icon_image_3]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
-                });
-                result.icon_image_4.forEach(function(image) {
-                    $('#detailKategori').find('[data-bind-icon_image_4]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
-                });
-                result.icon_image_5.forEach(function(image) {
-                    $('#detailKategori').find('[data-bind-icon_image_5]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
-                });
-                result.icon_image_6.forEach(function(image) {
-                    $('#detailKategori').find('[data-bind-icon_image_6]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
-                });
-                result.icon_image_7.forEach(function(image) {
-                    $('#detailKategori').find('[data-bind-icon_image_7]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
-                });
+                // result.second_image.forEach(function(image) {
+                //     $('#detailKategori').find('[data-bind-second_image]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
+                // });
+                // result.third_image.forEach(function(image) {
+                //     $('#detailKategori').find('[data-bind-third_image]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
+                // });
+                // result.icon_image_1.forEach(function(image) {
+                //     $('#detailKategori').find('[data-bind-icon_image_1]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
+                // });
+                // result.icon_image_2.forEach(function(image) {
+                //     $('#detailKategori').find('[data-bind-icon_image_2]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
+                // });
+                // result.icon_image_3.forEach(function(image) {
+                //     $('#detailKategori').find('[data-bind-icon_image_3]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
+                // });
+                // result.icon_image_4.forEach(function(image) {
+                //     $('#detailKategori').find('[data-bind-icon_image_4]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
+                // });
+                // result.icon_image_5.forEach(function(image) {
+                //     $('#detailKategori').find('[data-bind-icon_image_5]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
+                // });
+                // result.icon_image_6.forEach(function(image) {
+                //     $('#detailKategori').find('[data-bind-icon_image_6]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
+                // });
+                // result.icon_image_7.forEach(function(image) {
+                //     $('#detailKategori').find('[data-bind-icon_image_7]').html(`<a href="${image.url}" target="_blank">View Image</a>`);
+                // });
             } else {
                 $('#detailKategori').find('[data-bind-first_image]').html(`-`);
-                $('#detailKategori').find('[data-bind-second_image]').html(`-`);
-                $('#detailKategori').find('[data-bind-third_image]').html(`-`);
-                $('#detailKategori').find('[data-bind-icon_image_1]').html(`-`);
-                $('#detailKategori').find('[data-bind-icon_image_2]').html(`-`);
-                $('#detailKategori').find('[data-bind-icon_image_3]').html(`-`);
-                $('#detailKategori').find('[data-bind-icon_image_4]').html(`-`);
-                $('#detailKategori').find('[data-bind-icon_image_5]').html(`-`);
-                $('#detailKategori').find('[data-bind-icon_image_6]').html(`-`);
-                $('#detailKategori').find('[data-bind-icon_image_7]').html(`-`);
+                // $('#detailKategori').find('[data-bind-second_image]').html(`-`);
+                // $('#detailKategori').find('[data-bind-third_image]').html(`-`);
+                // $('#detailKategori').find('[data-bind-icon_image_1]').html(`-`);
+                // $('#detailKategori').find('[data-bind-icon_image_2]').html(`-`);
+                // $('#detailKategori').find('[data-bind-icon_image_3]').html(`-`);
+                // $('#detailKategori').find('[data-bind-icon_image_4]').html(`-`);
+                // $('#detailKategori').find('[data-bind-icon_image_5]').html(`-`);
+                // $('#detailKategori').find('[data-bind-icon_image_6]').html(`-`);
+                // $('#detailKategori').find('[data-bind-icon_image_7]').html(`-`);
             }
 
         },

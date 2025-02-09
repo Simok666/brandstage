@@ -987,12 +987,12 @@ class ApiEditController extends Controller
                   ],
                   [
                       'heading_first_text' => $item['heading_first_text'],
-                      'heading_strong_text' => $item['heading_strong_text'],
-                      'heading_second_text' => $item['heading_second_text'],
-                      'heading_underlined_first_text' => $item['heading_underlined_first_text'],
-                      'heading_third_text' => $item['heading_third_text'],
-                      'heading_underlined_second_text' => $item['heading_underlined_second_text'],
-                      'heading_fourth_text' => $item['heading_fourth_text'],
+                    //   'heading_strong_text' => $item['heading_strong_text'],
+                    //   'heading_second_text' => $item['heading_second_text'],
+                    //   'heading_underlined_first_text' => $item['heading_underlined_first_text'],
+                    //   'heading_third_text' => $item['heading_third_text'],
+                    //   'heading_underlined_second_text' => $item['heading_underlined_second_text'],
+                    //   'heading_fourth_text' => $item['heading_fourth_text'],
                       'description' => $item['description'],
                       'button_title' => $item['button_title'],
                       'button_link' => $item['button_link'],
@@ -1006,68 +1006,68 @@ class ApiEditController extends Controller
                 }
             }
 
-            if($images_heroes = $item['second_image']) {
-                foreach ($images_heroes as $image_hero) {
-                    $aboutSecondSection->clearMediaCollection('second_image');
-                    $aboutSecondSection->addMedia($image_hero)->toMediaCollection('second_image');
-                }
-            }
+            // if($images_heroes = $item['second_image']) {
+            //     foreach ($images_heroes as $image_hero) {
+            //         $aboutSecondSection->clearMediaCollection('second_image');
+            //         $aboutSecondSection->addMedia($image_hero)->toMediaCollection('second_image');
+            //     }
+            // }
             
-            if($images_heroes = $item['third_image']) {
-                foreach ($images_heroes as $image_hero) {
-                    $aboutSecondSection->clearMediaCollection('third_image');
-                    $aboutSecondSection->addMedia($image_hero)->toMediaCollection('third_image');
-                }
-            }
+            // if($images_heroes = $item['third_image']) {
+            //     foreach ($images_heroes as $image_hero) {
+            //         $aboutSecondSection->clearMediaCollection('third_image');
+            //         $aboutSecondSection->addMedia($image_hero)->toMediaCollection('third_image');
+            //     }
+            // }
 
-            if($images_heroes = $item['icon_image_1']) {
-                foreach ($images_heroes as $image_hero) {
-                    $aboutSecondSection->clearMediaCollection('icon_image_1');
-                    $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_1');
-                }
-            }
+            // if($images_heroes = $item['icon_image_1']) {
+            //     foreach ($images_heroes as $image_hero) {
+            //         $aboutSecondSection->clearMediaCollection('icon_image_1');
+            //         $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_1');
+            //     }
+            // }
 
-            if($images_heroes = $item['icon_image_2']) {
-                foreach ($images_heroes as $image_hero) {
-                    $aboutSecondSection->clearMediaCollection('icon_image_2');
-                    $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_2');
-                }
-            }
+            // if($images_heroes = $item['icon_image_2']) {
+            //     foreach ($images_heroes as $image_hero) {
+            //         $aboutSecondSection->clearMediaCollection('icon_image_2');
+            //         $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_2');
+            //     }
+            // }
 
-            if($images_heroes = $item['icon_image_3']) {
-                foreach ($images_heroes as $image_hero) {
-                    $aboutSecondSection->clearMediaCollection('icon_image_3');
-                    $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_3');
-                }
-            }
+            // if($images_heroes = $item['icon_image_3']) {
+            //     foreach ($images_heroes as $image_hero) {
+            //         $aboutSecondSection->clearMediaCollection('icon_image_3');
+            //         $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_3');
+            //     }
+            // }
 
-            if($images_heroes = $item['icon_image_4']) {
-                foreach ($images_heroes as $image_hero) {
-                    $aboutSecondSection->clearMediaCollection('icon_image_4');
-                    $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_4');
-                }
-            }
+            // if($images_heroes = $item['icon_image_4']) {
+            //     foreach ($images_heroes as $image_hero) {
+            //         $aboutSecondSection->clearMediaCollection('icon_image_4');
+            //         $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_4');
+            //     }
+            // }
 
-            if($images_heroes = $item['icon_image_5']) {
-                foreach ($images_heroes as $image_hero) {
-                    $aboutSecondSection->clearMediaCollection('icon_image_5');
-                    $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_5');
-                }
-            }
+            // if($images_heroes = $item['icon_image_5']) {
+            //     foreach ($images_heroes as $image_hero) {
+            //         $aboutSecondSection->clearMediaCollection('icon_image_5');
+            //         $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_5');
+            //     }
+            // }
 
-            if($images_heroes = $item['icon_image_6']) {
-                foreach ($images_heroes as $image_hero) {
-                    $aboutSecondSection->clearMediaCollection('icon_image_6');
-                    $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_6');
-                }
-            }
+            // if($images_heroes = $item['icon_image_6']) {
+            //     foreach ($images_heroes as $image_hero) {
+            //         $aboutSecondSection->clearMediaCollection('icon_image_6');
+            //         $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_6');
+            //     }
+            // }
 
-            if($images_heroes = $item['icon_image_7']) {
-                foreach ($images_heroes as $image_hero) {
-                    $aboutSecondSection->clearMediaCollection('icon_image_7');
-                    $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_7');
-                }
-            }
+            // if($images_heroes = $item['icon_image_7']) {
+            //     foreach ($images_heroes as $image_hero) {
+            //         $aboutSecondSection->clearMediaCollection('icon_image_7');
+            //         $aboutSecondSection->addMedia($image_hero)->toMediaCollection('icon_image_7');
+            //     }
+            // }
 
           DB::commit();
           });

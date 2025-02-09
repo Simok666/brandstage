@@ -511,10 +511,21 @@
     }
 
     .cups_img.new-gif {
-        width: 520px;
+        /* width: 520px;
         max-width: 150%;
         top: 0%;
-        left: 0;
+        left: 0; */
+
+        /* width: 617px;
+        max-width: 170%;
+        top: 15%;
+        left: -30px; */
+
+        width: 500px;
+        height: 500px;
+        top: 15%;
+        left: -30px; 
+        object-fit: cover; 
     }
 
     .cups_img {
@@ -597,7 +608,7 @@
 
     .h3_new.meet_retell {
     max-width: 610px;
-    margin-left: 210px;
+    /* margin-left: 210px; */
     }
 
     .underline_v {
@@ -617,15 +628,15 @@
     }
 
     .paragraph_new._35-bottom-space {
-        width: 810px;
+        /* width: 810px; */
         max-width: 660px;
-        margin-bottom: 10px;
-        margin-left: -30px;
+        /* margin-bottom: 10px;
+        margin-left: -30px; */
         padding-top: 0;
         font-family: museo-sans, sans-serif;
         font-size: 16px;
         position: relative;
-        left: 240px;
+        /* left: 240px; */
         }
 
         .grid-12 {
@@ -736,7 +747,7 @@
         align-items: center;
         margin-top: 50px;
         margin-bottom: 0;
-        margin-left: 210px;
+        /* margin-left: 210px; */
         padding-top: 10px;
         padding-left: 40px;
         transition: border-color .25s, background-color .25s;
@@ -986,8 +997,8 @@
         @if (count($dataAboutSecond) == 0) 
          <div class="collage-wrapper home">
                 <img class="cups_img new-gif" width="222" src="https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/64113b827f602eab28522acf_product_animation_03.gif" alt="">
-                <img class="missing_image malin maude new-homepage" width="520" sizes="(max-width: 991px) 100vw, (max-width: 1919px) 41vw, 520px" src="https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/63f669efafa11d2ad8166f7b_map.jpg" alt="">
-                <img class="image-23 malin new-homepage" width="128" height="134" src="https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/63dde80710d0b9c22c34b2fe_25_day_small.png" alt="">
+                <!-- <img class="missing_image malin maude new-homepage" width="520" sizes="(max-width: 991px) 100vw, (max-width: 1919px) 41vw, 520px" src="https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/63f669efafa11d2ad8166f7b_map.jpg" alt="">
+                <img class="image-23 malin new-homepage" width="128" height="134" src="https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/63dde80710d0b9c22c34b2fe_25_day_small.png" alt=""> -->
             </div>
             <div id="w-node-d7f9fa13-7c3f-6adc-0132-6638a57fd2da-38e12690" class="v-contaner-wrapper mobile">
                 
@@ -1007,7 +1018,7 @@
                 Each space has a built-in community. With just 25 sq/ft your brand can easily scale your retail presence any where that your target customer works, lives, travels, shops, and plays.
                 </p>
                 
-                <div class="w-layout-grid grid-12">
+                <!-- <div class="w-layout-grid grid-12">
                     <div id="w-node-cccaf796-1044-6344-7eea-04bb12cad28d-38e12690" class="large-icon-wrapper">
                         <img class="image-44" src="https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/6214196c440ab86126fa3bf1_shopping.png" alt="">
                     </div>
@@ -1030,7 +1041,7 @@
                         <img class="image-44" src="https://cdn.prod.website-files.com/6070d02b5737f5fd93e1268f/622fb42ba1866f14d4b5ce38_Living_3x.png" alt="">
                     </div>
                     
-                </div>
+                </div> -->
                 
                 <a href="#" class="join large-beta black_outline-2 w-button">
                     learn more  
@@ -1041,39 +1052,37 @@
             <div class="collage-wrapper home">
                 
                 <img class="cups_img new-gif" width="222" src="{{ $second->getFirstMedia('first_image')->getUrl() }}" alt="">
-                <img class="missing_image malin maude new-homepage" width="520" sizes="(max-width: 991px) 100vw, (max-width: 1919px) 41vw, 520px" src="{{ $second->getFirstMedia('second_image')->getUrl() }}" alt="">
-                <img class="image-23 malin new-homepage" width="128" height="134" src="{{ $second->getFirstMedia('third_image')->getUrl() }}" alt="">
+                
             </div>
             <div id="w-node-d7f9fa13-7c3f-6adc-0132-6638a57fd2da-38e12690" class="v-contaner-wrapper mobile">
                 
                 <h3 class="h3_new meet_retell">
                     {!! html_entity_decode($second->heading_first_text) ?? "Meet" !!}
-
-                    <!-- {{ $second->heading_first_text ?? "Meet" }} -->
+<!-- 
                     <strong>
                     {!! html_entity_decode($second->heading_strong_text) ?? "re/tell" !!}
 
-                        <!-- {{ $second->heading_strong_text ?? "re/tell" }} -->
+    
                     </strong>
                     {!! html_entity_decode($second->heading_second_text) ?? ".We" !!}
 
-                    <!-- {{ $second->heading_second_text ?? ".We" }} -->
+            
                     <span class="underline_v">
                     {!! html_entity_decode($second->heading_underlined_first_text) ?? "match your brand" !!}
 
-                        <!-- {{ $second->heading_underlined_first_text ?? "match your brand" }} -->
+                       
                     </span>
                     {!! html_entity_decode($second->heading_third_text) ?? "with" !!}
 
-                    <!-- {{ $second->heading_third_text ?? "with" }} -->
+        
                     <span class="underline_v">
                     {!! html_entity_decode($second->heading_underlined_second_text) ?? "excess space" !!}
 
-                        <!-- {{ $second->heading_underlined_second_text ?? "excess space" }} -->
+                      
                     </span>
                     {!! html_entity_decode($second->heading_fourth_text) ?? "inside high traffic retail destinations." !!}
 
-                    <!-- {{ $second->heading_fourth_text ?? "inside high traffic retail destinations." }} -->
+                     -->
                     
                 </h3>
                 
@@ -1081,34 +1090,9 @@
                 <p class="paragraph_new _35-bottom-space">
                 {!! html_entity_decode($second->description) ?? "Each space has a built-in community. With just 25 sq/ft your brand can easily scale your retail presence any where that your target customer works, lives, travels, shops, and plays." !!}
                 
-                <!-- {{ $second->description ?? "Each space has a built-in community. With just 25 sq/ft your brand can easily scale your retail presence any where that your target customer works, lives, travels, shops, and plays." }} -->
+                
                 </p>
                 
-                <div class="w-layout-grid grid-12">
-                    
-                    
-                    <div id="w-node-cccaf796-1044-6344-7eea-04bb12cad28d-38e12690" class="large-icon-wrapper">
-                        <img class="image-44" src="{{ $second->getFirstMedia('icon_image_1')->getUrl() }}" alt="">
-                    </div>
-                    <div id="w-node-c24386b3-37af-edb2-d424-5f9d82039140-38e12690" class="large-icon-wrapper">
-                        <img class="image-45" src="{{ $second->getFirstMedia('icon_image_2')->getUrl() }}" alt="">
-                    </div>
-                    <div id="w-node-e9f010fe-20db-92db-e7a0-23f8252363e2-38e12690" class="large-icon-wrapper">
-                        <img class="image-44" src="{{ $second->getFirstMedia('icon_image_3')->getUrl() }}" alt="">
-                    </div>
-                    <div id="travel-icon" class="large-icon-wrapper w-node-d62715d0-0629-968a-b88b-4baa38cf75d3-38e12690">
-                        <img class="image-44" src="{{ $second->getFirstMedia('icon_image_4')->getUrl() }}" alt="">
-                    </div>
-                    <div id="w-node-_2c173987-9ce3-7aaa-9192-79788a52490e-38e12690" class="large-icon-wrapper">
-                        <img class="image-44" src="{{ $second->getFirstMedia('icon_image_5')->getUrl() }}" alt="">
-                    </div>
-                    <div id="w-node-_2addf193-6110-d9ab-1980-96a344734884-38e12690" class="large-icon-wrapper">
-                        <img class="image-44" src="{{ $second->getFirstMedia('icon_image_6')->getUrl() }}" alt="">
-                    </div>
-                    <div id="w-node-_2f0121b6-b801-53a5-8f4a-338127d391ad-38e12690" class="large-icon-wrapper">
-                        <img class="image-44" src="{{ $second->getFirstMedia('icon_image_7')->getUrl() }}" alt="">
-                    </div>
-                </div>
                 
                 <a href="{{ $second->button_link }}" class="join large-beta black_outline-2 w-button">
                     {{ $second->button_title ?? "learn more"}}  
@@ -1281,7 +1265,7 @@
 
     <footer class="footer">
         <!-- Newsletter Section -->
-        <div class="newsletter">
+        <!-- <div class="newsletter">
             <div class="newsletter-content">
                 <h2>Newsletter</h2>
                 <p>Stay In The Loop. Get the latest resources, updates and discounts to your inbox</p>
@@ -1290,7 +1274,7 @@
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
-        </div>
+        </div> -->
 
         <!-- Main Footer Content -->
         <div class="footer-content">
@@ -1342,9 +1326,9 @@
         </div>
 
         <!-- Copyright -->
-        <div class="copyright">
+        <!-- <div class="copyright">
             <p>© 2024 BrandStage. All rights reserved.</p>
-        </div>
+        </div> -->
     </footer>
     
 

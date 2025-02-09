@@ -570,7 +570,7 @@
     
     <footer class="footer">
         <!-- Newsletter Section -->
-        <div class="newsletter">
+        <!-- <div class="newsletter">
             <div class="newsletter-content">
                 <h2>Newsletter</h2>
                 <p>Stay In The Loop. Get the latest resources, updates and discounts to your inbox</p>
@@ -579,7 +579,7 @@
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
-        </div>
+        </div> -->
 
         <!-- Main Footer Content -->
         <div class="footer-content">
@@ -631,9 +631,9 @@
         </div>
 
         <!-- Copyright -->
-        <div class="copyright">
+        <!-- <div class="copyright">
             <p>© 2024 BrandStage. All rights reserved.</p>
-        </div>
+        </div> -->
     </footer>
     
 

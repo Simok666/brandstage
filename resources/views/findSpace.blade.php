@@ -241,7 +241,7 @@
 
     .space__partner-features {
         padding: 5rem 2rem;
-        background-color: #ffffff;
+        background-color: #fcf8f1;
     }
 
     .space__container {
@@ -288,7 +288,9 @@
     .space__feature-icon {
         width: 64px;
         height: 64px;
-        background-color: #f5f5f5;
+        /* background-color: #f5f5f5; */
+        background-color: #ffffff;
+        
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -1063,7 +1065,7 @@
         </div>
     </section>
 
-    <section class="space-learn__hero">
+    <!-- <section class="space-learn__hero">
         <div class="space-learn__hero-content">
             <div class="space-learn__hero-text">
                 <h1>
@@ -1072,9 +1074,7 @@
                     @else
                     {!! html_entity_decode($dataSpaceThirdSection[0]->heading)!!}
                     @endif
-                    
-
-                    <!-- {{ $dataSpaceThirdSection[0]->heading ?? "The world's art collectors, all in one place"}} -->
+                
                 </h1>
                 <p>
                     @if($dataSpaceThirdSection[0] == null)
@@ -1083,12 +1083,10 @@
                     {!! html_entity_decode($dataSpaceThirdSection[0]->description)!!}
                     @endif
                     
-                    <!-- {{ $dataSpaceThirdSection[0]->description ?? "Across the globe, 3 million+ art enthusiasts use Artsy to discover and buy art with confidence and ease. From New York to Seoul, a collective of 5 million social media followers engage with Artsy's editorial, curatorial, and social content." }} -->
                 </p>
                 <a href="{{ $dataSpaceThirdSection[0]->button_link ?? '#'}}" class="space-learn__cta-button">{{ $dataSpaceThirdSection[0]->button_title ?? "Learn More"}}</a>
             </div>
             <div class="space-learn__hero-image">
-                <!-- <div class="space-learn__gradient-bg"></div> -->
                 @if(count($dataSpaceThirdSection) == 0)
                 <img src="https://partners.artsy.net/wp-content/uploads/2024/04/01-1-568x426.png" alt="Artsy platform interface showing gallery exhibitions" class="space-learn__platform-preview">
                 @else
@@ -1099,7 +1097,7 @@
                 
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="space__cta-section">
         <div class="space__chevron">
@@ -1239,7 +1237,7 @@
     
     <footer class="footer">
         <!-- Newsletter Section -->
-        <div class="newsletter">
+        <!-- <div class="newsletter">
             <div class="newsletter-content">
                 <h2>Newsletter</h2>
                 <p>Stay In The Loop. Get the latest resources, updates and discounts to your inbox</p>
@@ -1248,7 +1246,7 @@
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
-        </div>
+        </div> -->
 
         <!-- Main Footer Content -->
         <div class="footer-content">
@@ -1300,9 +1298,9 @@
         </div>
 
         <!-- Copyright -->
-        <div class="copyright">
+        <!-- <div class="copyright">
             <p>© 2024 BrandStage. All rights reserved.</p>
-        </div>
+        </div> -->
     </footer>
     
 

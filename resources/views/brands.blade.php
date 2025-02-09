@@ -141,7 +141,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            background: #333333;
+            background: #ffffff;
             overflow: hidden;
         }
 
@@ -168,7 +168,7 @@
         }
 
         .brands__heading {
-            color: #f5f5f5;
+            /* color: #f5f5f5; */
             font-size: 3.5rem;
             font-weight: 300;
             line-height: 1.6;
@@ -177,7 +177,7 @@
 
         .brands__description {
             font-size: 1.25rem;
-            color: #e0e0e0;
+            /* color: #e0e0e0; */
             margin-bottom: 6rem;
             max-width: 500px;
             line-height: 3;
@@ -1356,9 +1356,9 @@
                     
                 </div>
                 
-                <a href="#" class="join large-beta black_outline-2 w-button">
+                <!-- <a href="#" class="join large-beta black_outline-2 w-button">
                     learn more  
-                </a>
+                </a> -->
             </div>
         @else
          @foreach ($brandSecondSection as $index => $second) 
@@ -1436,7 +1436,7 @@
             @endforeach
         @endif
         </div>
-        <div class="w-layout-grid _2nd-grid">
+        <!-- <div class="w-layout-grid _2nd-grid">
             @if(count($brandThirdSection) == 0)
             <div id="Brand-Start" class="title-wrap w-node-af785f74-462c-d3d2-a2f9-6bb8b1fa7d21-38e12690">
                 <h3 class="h3_new irl">
@@ -1501,7 +1501,7 @@
             <div id="Brand-Start" class="title-wrap w-node-af785f74-462c-d3d2-a2f9-6bb8b1fa7d21-38e12690">
                 <h3 class="h3_new irl">
                  {!! html_entity_decode($third->heading) !!}
-                    <!-- {{ $third->heading }} -->
+                
                 </h3>
             </div>
             <div class="for-brands-wrapper">
@@ -1511,7 +1511,7 @@
                             <span class="underline_v">
                             {!! html_entity_decode($third->vertical_text) !!}
 
-                                <!-- {{ $third->vertical_text }} -->
+                            
                             </span>
                         </h3>
                     </div>
@@ -1519,7 +1519,6 @@
                     <p class="paragraph_new">
                     {!! html_entity_decode($third->description) !!}
                         
-                     <!-- {{ $third->description }} -->
                     </p>
                     <div class="w-layout-grid grid-11">
                         <div id="w-node-_6908daec-7568-e92c-8359-52ad8c5dcc1d-38e12690" class="white-circle-icon">
@@ -1563,7 +1562,7 @@
             </div>
             @endforeach
           @endif
-        </div>
+        </div> -->
     </div>
 
     <div class="brands-popup__container">
@@ -1662,7 +1661,7 @@
             @endif
         </div>
 
-        <a href="{{ $brandsFourthSectionHeadingButton[0]->button_link ?? '#' }}" class="brands-popup__cta-button">{{ $brandsFourthSectionHeadingButton[0]->button_title ?? "Get a Free Pop Up Quote"}} </a>
+        <!-- <a href="{{ $brandsFourthSectionHeadingButton[0]->button_link ?? '#' }}" class="brands-popup__cta-button">{{ $brandsFourthSectionHeadingButton[0]->button_title ?? "Get a Free Pop Up Quote"}} </a> -->
     </div>
 
     <section class="space__cta-section">
@@ -1795,7 +1794,7 @@
     
     <footer class="footer">
         <!-- Newsletter Section -->
-        <div class="newsletter">
+        <!-- <div class="newsletter">
             <div class="newsletter-content">
                 <h2>Newsletter</h2>
                 <p>Stay In The Loop. Get the latest resources, updates and discounts to your inbox</p>
@@ -1804,7 +1803,7 @@
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
-        </div>
+        </div> -->
 
         
 
@@ -1858,9 +1857,9 @@
         </div>
 
         <!-- Copyright -->
-        <div class="copyright">
+        <!-- <div class="copyright">
             <p>© 2024 BrandStage. All rights reserved.</p>
-        </div>
+        </div> -->
     </footer>
 
     <script>
