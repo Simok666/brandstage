@@ -22,6 +22,7 @@ Route::get('/findSpace', [PageController::class, 'spacesection']);
 Route::get('/about', [PageController::class, 'aboutsection']);
 Route::get('/insights', [PageController::class, 'insightsection']);
 Route::get('/home', [PageController::class, 'homesection']);
+Route::get('/', [PageController::class, 'homesection']);
 Route::get('/blog', [PageController::class, 'blogsection']);
 
 Route::post('/upload-image', function (Request $request) {
@@ -39,7 +40,7 @@ Route::post('/upload-image', function (Request $request) {
 
 Route::group(['suffix' => '.html'], function () {
 
-    Route::get('/{view?}', function ($view = "auth.login") {
+    Route::get('/{view?}', function ($view = "home") {
         $view = str_replace(["-", ".html"], [".", ""], $view);
         if (!view()->exists($view)) {
             abort(404);
