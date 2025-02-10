@@ -690,7 +690,7 @@ $(".btn-last").click(function() {
     let table = $(this).parent().parent().parent().attr("class");
     table = table.replace(/pagination-setting-/g, "", table);
     req.page = $(this).parent().parent().parent().attr('lastpage');
-    GetData(request, table, eval(`format${table}`));
+    GetData(req, table, eval(`format${table}`));
 });
 
 $(".goto").on("submit",function(e) {

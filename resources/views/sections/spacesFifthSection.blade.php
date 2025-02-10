@@ -266,9 +266,9 @@
     $(document).ready(function() {
         
         GetData(req,"space_fifth_section_heading_descriptions", formatspaceSixthheadingdescription);
-        GetData(req,"space_fifth_section_f_a_q_s", formatspacesSixthfaq);
+        GetData(req,"space_fifth_section_f_a_q_s", formatspace_fifth_section_f_a_q_s);
     });
-    function formatspacesSixthfaq(data) {
+    function formatspace_fifth_section_f_a_q_s(data) {
         var result = "";
         $.each(data, function(index, data) {
             

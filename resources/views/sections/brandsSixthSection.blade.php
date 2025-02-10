@@ -263,7 +263,7 @@
     $(document).ready(function() {
         
         GetData(req,"brands_sixth_section_heading_descriptions", formatbrandSixthheadingdescription);
-        GetData(req,"brands_sixth_section_f_a_q_s", formatbrandSixthfaq);
+        GetData(req,"brands_sixth_section_f_a_q_s", formatbrands_sixth_section_f_a_q_s);
     });
 
     function settingSummerNote(selector) {
@@ -282,7 +282,7 @@
         });
     }
 
-    function formatbrandSixthfaq(data) {
+    function formatbrands_sixth_section_f_a_q_s(data) {
         var result = "";
         $.each(data, function(index, data) {
             
