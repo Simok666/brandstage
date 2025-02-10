@@ -869,7 +869,7 @@
                                         <div class="text-size-normal text-weight-medium">
                                             <div class="w-layout-vflex blog-subtitle_author">
                                                 <a href="#" class="w-inline-block">
-                                                    <img class="blog-subtitle-avatar" sizes="100vw" src="https://cdn.prod.website-files.com/63062129119620a44791a2eb/67462cf9d655077dd65aef28_T024JF7B3-U07QZV9EJ4Q-baa2eca98356-512.webp" alt="">
+                                                
                                                 </a>
                                                 <a href="#" class="display-inline hover-opacity">${resp.data.published_by}</a>
                                             </div>
