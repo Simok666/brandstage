@@ -17,5 +17,13 @@ class AboutThirdSectionHeadingDescription extends Model
     protected $fillable = [
         'heading',
         'description',
+        'heading_box_1',
+        'description_box_1',
+        'heading_box_2',
+        'description_box_2',
+        'heading_box_3',
+        'description_box_3',
+        'heading_box_4',
+        'description_box_4'
     ];
 }

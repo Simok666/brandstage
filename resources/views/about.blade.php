@@ -1130,39 +1130,94 @@
     </div>
 
     <div class="about__features-grid">
-        @if(count($dataAboutThirdIcon) == 0)
+        <!-- @if(count($dataAboutThirdIcon) == 0) -->
         <div class="about__feature-card about__add-tasks">
             <div class="about__icon-wrapper">
                 <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/about-us-4-1SxvU9RYn0j4IgJZ0JqU0uMfznAr35.png" alt="" class="about__icon">
             </div>
-            <h3 class="about__feature-title">Add Tasks</h3>
-            <p class="about__feature-description">Add your tasks for the day & update them. Check them once they're gone.</p>
+            <h3 class="about__feature-title">
+            @if($dataAboutThirdHeading[0] == null)
+            Add Tasks
+                    @else
+                    {!! html_entity_decode($dataAboutThirdHeading[0]->heading_box_1)!!}
+                    @endif
+                
+            </h3>
+            <p class="about__feature-description">
+            @if($dataAboutThirdHeading[0] == null)
+            Add your tasks for the day & update them. Check them once they're gone.
+                    @else
+                    {!! html_entity_decode($dataAboutThirdHeading[0]->description_box_1)!!}
+                    @endif
+                
+            </p>
         </div>
 
         <div class="about__feature-card about__time-boxing">
             <div class="about__icon-wrapper">
                 <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/about-us-4-1SxvU9RYn0j4IgJZ0JqU0uMfznAr35.png" alt="" class="about__icon">
             </div>
-            <h3 class="about__feature-title">Time Boxing</h3>
-            <p class="about__feature-description">Allocate time for each task for better time management & organization.</p>
+            <h3 class="about__feature-title">
+            @if($dataAboutThirdHeading[0] == null)
+            Time Boxing
+                    @else
+                    {!! html_entity_decode($dataAboutThirdHeading[0]->heading_box_2)!!}
+                    @endif
+            </h3>
+            <p class="about__feature-description">
+            @if($dataAboutThirdHeading[0] == null)
+            Allocate time for each task for better time management & organization.
+                    @else
+                    {!! html_entity_decode($dataAboutThirdHeading[0]->description_box_2)!!}
+                    @endif
+                
+            </p>
         </div>
 
         <div class="about__feature-card about__prioritisation">
             <div class="about__icon-wrapper">
                 <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/about-us-4-1SxvU9RYn0j4IgJZ0JqU0uMfznAr35.png" alt="" class="about__icon">
             </div>
-            <h3 class="about__feature-title">Prioritisation</h3>
-            <p class="about__feature-description">Prioritise the most important tasks of the day to the top, so you do what needs to be done first.</p>
+            <h3 class="about__feature-title">
+            @if($dataAboutThirdHeading[0] == null)
+            Prioritisation.
+                    @else
+                    {!! html_entity_decode($dataAboutThirdHeading[0]->heading_box_3)!!}
+                    @endif
+                
+            </h3>
+            <p class="about__feature-description">
+            @if($dataAboutThirdHeading[0] == null)
+            Prioritise the most important tasks of the day to the top, so you do what needs to be done first..
+                    @else
+                    {!! html_entity_decode($dataAboutThirdHeading[0]->description_box_3)!!}
+                    @endif
+                
+            </p>
         </div>
 
         <div class="about__feature-card about__video-calls">
             <div class="about__icon-wrapper">
                 <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/about-us-4-1SxvU9RYn0j4IgJZ0JqU0uMfznAr35.png" alt="" class="about__icon">
             </div>
-            <h3 class="about__feature-title">Video Calls</h3>
-            <p class="about__feature-description">Hop on video calls, present your screen, invite external guests & collaborate with your entire team.</p>
+            <h3 class="about__feature-title">
+            @if($dataAboutThirdHeading[0] == null)
+            Video Calls
+                    @else
+                    {!! html_entity_decode($dataAboutThirdHeading[0]->heading_box_4)!!}
+                    @endif
+                
+            </h3>
+            <p class="about__feature-description">
+            @if($dataAboutThirdHeading[0] == null)
+            Hop on video calls, present your screen, invite external guests & collaborate with your entire team.
+                    @else
+                    {!! html_entity_decode($dataAboutThirdHeading[0]->description_box_4)!!}
+                    @endif
+                
+            </p>
         </div>
-        @else
+        <!-- @else
             @foreach($dataAboutThirdIcon as $index => $data)
             <div class="about__feature-card about__video-calls">
                 <div class="about__icon-wrapper">
@@ -1170,17 +1225,13 @@
                 </div>
                 <h3 class="about__feature-title">
                     {!! html_entity_decode($data->heading) !!}
-
-                    <!-- {{ $data->heading }} -->
                 </h3>
                 <p class="about__feature-description">
                 {!! html_entity_decode($data->description) !!}
-
-                    <!-- {{ $data->description }} -->
                 </p>
             </div>
-            @endforeach
-        @endif
+            @endforeach -->
+        <!-- @endif -->
     </div>
 
     <div class="about-contact__container">

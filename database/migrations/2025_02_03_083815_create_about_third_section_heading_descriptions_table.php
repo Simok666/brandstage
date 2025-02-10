@@ -15,6 +15,14 @@ return new class extends Migration
             $table->id();
             $table->text('heading')->nullable();
             $table->text('description')->nullable();
+            $table->text('heading_box_1')->nullable();
+            $table->text('description_box_1')->nullable();
+            $table->text('heading_box_2')->nullable();
+            $table->text('description_box_2')->nullable();
+            $table->text('heading_box_3')->nullable();
+            $table->text('description_box_3')->nullable();
+            $table->text('heading_box_4')->nullable();
+            $table->text('description_box_4')->nullable();
             $table->timestamps();
         });
     }

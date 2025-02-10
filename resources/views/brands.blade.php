@@ -1428,9 +1428,9 @@
                     </div>
                 </div>
                 
-                <a href="{{ $second->button_link }}" class="join large-beta black_outline-2 w-button">
+                <!-- <a href="{{ $second->button_link }}" class="join large-beta black_outline-2 w-button">
                     {{ $second->button_title ?? "learn more"}}  
-                </a>
+                </a> -->
                 
             </div>
             @endforeach

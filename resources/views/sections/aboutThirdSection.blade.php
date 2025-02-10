@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<div class="card">
+<!-- <div class="card">
     <div class="card-header">
         <h4 class="card-title">Third Section Icon Description</h4>
         <button type="submit" style="float: right" class="btn btn-primary btn-add-kategori-2">Add About Third Icon Description</button>
@@ -36,7 +36,7 @@
             "Action"
         ] , 'pagination' => true])
     </div>
-</div>
+</div> -->
 
 <div class="modal fade text-left" id="modal-add-kategori" tabindex="-1" role="dialog"
     aria-labelledby="myModalLabel4" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
@@ -68,6 +68,70 @@
                                 <th>Description</th>
                                 <td>
                                 <textarea type="text" name="repeater[0][description]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" class="form-control"></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Heading Box 1</th>
+                                <td>
+                                <textarea type="text" name="repeater[0][heading_box_1]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" class="form-control"></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Description Box 1</th>
+                                <td>
+                                <textarea type="text" name="repeater[0][description_box_1]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" class="form-control"></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Heading Box 2</th>
+                                <td>
+                                <textarea type="text" name="repeater[0][heading_box_2]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" class="form-control"></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Description Box 2</th>
+                                <td>
+                                <textarea type="text" name="repeater[0][description_box_2]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" class="form-control"></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Heading Box 3</th>
+                                <td>
+                                <textarea type="text" name="repeater[0][heading_box_3]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" class="form-control"></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Description Box 3</th>
+                                <td>
+                                <textarea type="text" name="repeater[0][description_box_3]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" class="form-control"></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Heading Box 4</th>
+                                <td>
+                                <textarea type="text" name="repeater[0][heading_box_4]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" class="form-control"></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Description Box 4</th>
+                                <td>
+                                <textarea type="text" name="repeater[0][description_box_4]" class="form-control sumernote-perpustakaan" rows="3">  </textarea>
 
                                     <!-- <textarea rows="3" name="repeater[0][description]" class="form-control"></textarea> -->
                                 </td>
@@ -190,6 +254,70 @@
                                     <!-- <textarea rows="3" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea> -->
                                 </td>
                             </tr>
+                            <tr>
+                                <th>Heading Box 1</th>
+                                <td >
+                                    <textarea type="text" name="repeater[0][heading_box_1]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_box_1 value=""></textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Description Box 1</th>
+                                <td >
+                                    <textarea type="text" name="repeater[0][description_box_1]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-description_box_1 value=""></textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Heading Box 2</th>
+                                <td >
+                                    <textarea type="text" name="repeater[0][heading_box_2]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_box_2 value=""></textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Description Box 2</th>
+                                <td >
+                                    <textarea type="text" name="repeater[0][description_box_2]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-description_box_2 value=""></textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Heading Box 3</th>
+                                <td >
+                                    <textarea type="text" name="repeater[0][heading_box_3]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_box_3 value=""></textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Description Box 3</th>
+                                <td >
+                                    <textarea type="text" name="repeater[0][description_box_3]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-description_box_3 value=""></textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Heading Box 4</th>
+                                <td >
+                                    <textarea type="text" name="repeater[0][heading_box_4]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-heading_box_4 value=""></textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Description Box 4</th>
+                                <td >
+                                    <textarea type="text" name="repeater[0][description_box_4]" value="" class="form-control sumernote-perpustakaan-edit" rows="3" data-bind-description_box_4 value=""></textarea>
+
+                                    <!-- <textarea rows="3" name="repeater[0][description]" value="" class="form-control" data-bind-description value=""></textarea> -->
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </form>
@@ -289,7 +417,7 @@
             result += `
                 <tr>
                     <td>${data.heading}</td>
-                    <td>${data.description} ${data.id}</td>
+                    <td>${data.description}</td>
                     <td>${!empty(data.icon_image) ? `<a href="#" class="openPopup" link="${data.icon_image[0].url}">View File</a> `: "-"}</td>
                     <td>
                         <a href="#" class="btn btn-warning btn-icon btn-sm btn-edit-2" title="Detail" data-id="${data.id}"><span class="bi bi-pencil"> </span></a>

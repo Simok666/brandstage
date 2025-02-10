@@ -1101,6 +1101,14 @@ class ApiEditController extends Controller
                   [
                       'heading' => $item['heading'],
                       'description' => $item['description'],
+                      'heading_box_1' => $item['heading_box_1'],
+                      'description_box_1' => $item['description_box_1'],
+                      'heading_box_2' => $item['heading_box_2'],
+                      'description_box_2' => $item['description_box_2'],
+                      'heading_box_3' => $item['heading_box_3'],
+                      'description_box_3' => $item['description_box_3'],
+                      'heading_box_4' => $item['heading_box_4'],
+                      'description_box_4' => $item['description_box_4']
                   ]
               );
 
