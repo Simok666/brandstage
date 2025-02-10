@@ -164,7 +164,7 @@ class PageController extends Controller
         $brandsSixthSectionFAQ = BrandsSixthSectionFAQResource::collection(
             BrandsSixthSectionFAQ::when(request()->filled("id"), function ($query){
                 $query->where('id', request("id"));
-            })->paginate($request->limit ?? "10")
+            })->paginate($request->limit ?? "16")
         );
 
         return view('brands', compact('navbarNavLink', 'navbarSection','brandHero',
@@ -226,7 +226,7 @@ class PageController extends Controller
         $dataSpaceFifthSectionFAQ = SpacesFifthSectionFAQResource::collection(
             SpaceFifthSectionFAQ::when(request()->filled("id"), function ($query){
                 $query->where('id', request("id"));
-            })->paginate($request->limit ?? "10")
+            })->paginate($request->limit ?? "16")
         );
 
         return view('findSpace', compact('navbarNavLink','navbarSection','dataSpaceHero', 
@@ -393,9 +393,25 @@ class PageController extends Controller
                 $query->where('id', request("id"));
             })->paginate($request->limit ?? "10")
         );
+
+        $limit = $request->input('limit', 3);
+        $page = $request->input('page', 1);
+
+        $query = InsightSection::query();
+
+        if ($request->filled('id')) {
+            $query->where('id', $request->input('id'));
+        }
+
+        $query->orderBy('created_at', 'desc');
+
+        $paginatedInsights = $query->paginate($limit, ['*'], 'page', $page);
+
+        $dataInsight = InsightSectionResource::collection($paginatedInsights);
         
 
-        return view('home', compact('navbarNavLink','navbarSection','dataHomeHeroHeading', 
+        return view('home', compact('navbarNavLink','navbarSection','dataHomeHeroHeading',
+        'dataInsight', 
         'dataHomeHeroImageSlider',
         'dataHomeSecondSection',
         'dataHomeThirdSection',

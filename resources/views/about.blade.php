@@ -96,7 +96,7 @@
         .nav-link {
             color: var(--black);
             font-family: museo-sans, sans-serif;
-            font-size: 15px;
+            font-size: 18px;
             font-weight: 300;
         }
 
@@ -1294,7 +1294,7 @@
                 <h3>Company Information</h3>
                 <ul>
                     <li><a href="{{url('about')}}">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{url('about')}}">Contact</a></li>
                 </ul>
             </div>
 

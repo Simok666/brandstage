@@ -96,7 +96,7 @@
         .nav-link {
             color: var(--black);
             font-family: museo-sans, sans-serif;
-            font-size: 15px;
+            font-size: 18px;
             font-weight: 300;
         }
 
@@ -569,7 +569,7 @@
 
     .collections {
         padding: 4rem 2rem;
-        max-width: 1100px;
+        max-width: 1400px;
         margin: 0 auto;
     }
 
@@ -596,7 +596,7 @@
     }
 
     .collections-main_locl-collections-main__content__explore__box-double__IqGRf-2 {
-        flex:1 ;
+        flex: 4;
     }
 
     .collections-main_locl-collections-main__content__explore__box__1l8yG {
@@ -1400,8 +1400,9 @@
         </div>
         @else
         <div class="collections-main_locl-collections-main__content__explore__collections__YCKQa">
-            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf">
+            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf-2">
                 <a href="#">
+                <!-- collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf-2 -->
                     <div class="collections-main_locl-collections-main__content__explore__box__content__cLgv_">
                         <img class="collections-main_locl-collections-main__content__explore__box__image__wZMwT" width="667" height="340" src="{{ $homeFourthSection[0] == null ? '' : $homeFourthSection[0]->getFirstMedia('blog_image')->getUrl() }}" alt="">
                         <div class="collections-main_locl-collections-main__content__explore__box__info__KKZfx">
@@ -1415,7 +1416,7 @@
                     </div>
                 </a>
             </div>
-            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf-2">
+            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf">
                 <a href="#">
                     <div class="collections-main_locl-collections-main__content__explore__box__content__cLgv_">
                         <img class="collections-main_locl-collections-main__content__explore__box__image__wZMwT" width ="320" height="340" src="{{ $homeFourthSection[1] == null ? '' : $homeFourthSection[1]->getFirstMedia('blog_image')->getUrl() }}" alt="">
@@ -1434,7 +1435,8 @@
             </div>
         </div>
         <div class="collections-main_locl-collections-main__content__explore__collections__YCKQa">
-            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf-2">
+        
+            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf">
                 <a href="#">
                     <div class="collections-main_locl-collections-main__content__explore__box__content__cLgv_">
                         <img class="collections-main_locl-collections-main__content__explore__box__image__wZMwT" width ="320" height="340" src="{{ $homeFourthSection[2] == null ? '' : $homeFourthSection[2]->getFirstMedia('blog_image')->getUrl() }}" alt="">
@@ -1451,7 +1453,7 @@
                     </div>
                 </a>
             </div>
-            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf">
+            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf-2">
                 <a href="#">
                     <div class="collections-main_locl-collections-main__content__explore__box__content__cLgv_">
                         <img class="collections-main_locl-collections-main__content__explore__box__image__wZMwT" width="667" height="340" src="{{ $homeFourthSection[3] == null ? '' : $homeFourthSection[3]->getFirstMedia('blog_image')->getUrl() }}" alt="">
@@ -1468,7 +1470,7 @@
             </div>
         </div>
         <div class="collections-main_locl-collections-main__content__explore__collections__YCKQa">
-            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf">
+            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf-2">
                 <a href="#">
                     <div class="collections-main_locl-collections-main__content__explore__box__content__cLgv_">
                         <img class="collections-main_locl-collections-main__content__explore__box__image__wZMwT" width="667" height="340" src=" {{ $homeFourthSection[4] == null ? '' : $homeFourthSection[4]->getFirstMedia('blog_image')->getUrl() }}" alt="">
@@ -1483,7 +1485,7 @@
                     </div>
                 </a>
             </div>
-            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf-2">
+            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf">
                 <a href="#">
                     <div class="collections-main_locl-collections-main__content__explore__box__content__cLgv_">
                         <img class="collections-main_locl-collections-main__content__explore__box__image__wZMwT" width ="320" height="340" src="{{ $homeFourthSection[5] == null ? '' : $homeFourthSection[5]->getFirstMedia('blog_image')->getUrl() }}" alt="">
@@ -1502,7 +1504,7 @@
             </div>
         </div>
         <div class="collections-main_locl-collections-main__content__explore__collections__YCKQa">
-            <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf-2">
+            <!-- <div class="collections-main_locl-collections-main__content__explore__box__1l8yG collections-main_locl-collections-main__content__explore__box-double__IqGRf-2">
                 <a href="#">
                     <div class="collections-main_locl-collections-main__content__explore__box__content__cLgv_">
                         <img class="collections-main_locl-collections-main__content__explore__box__image__wZMwT" width ="320" height="340" src="{{ $homeFourthSection[6] == null ? '' : $homeFourthSection[6]->getFirstMedia('blog_image')->getUrl() }}" alt="">
@@ -1552,7 +1554,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
         </div>
         @endif
         
@@ -1565,7 +1567,7 @@
         </div>
         
         <div class="blog-grid">
-            @if(count($homeFifthSection) == 0)
+            @if(count($dataInsight) == 0)
             <article class="blog-card">
                 <img src="https://cdn.prod.website-files.com/63062129119620a44791a2eb/675a0613f9bf3d20b0b51c83_what_is_adaptive_project_management_blog_hero_image_1440x810.webp" alt="Person with headphones working on laptop" class="blog-image">
                 <div class="blog-content">
@@ -1590,12 +1592,12 @@
                 </div>
             </article>
             @else
-                @foreach($homeFifthSection as $index => $data)
+                @foreach($dataInsight as $index => $data)
                 <article class="blog-card">
                     <img src="{{ $data->getFirstMedia('blog_image')->getUrl() }}" alt="Professional with tablet" class="blog-image">
                     <div class="blog-content">
                         <h2 class="blog-title">{{ $data->title }}</h2>
-                        <a href="{{ $data->blog_link ?? '#' }}" class="read-more">Read more</a>
+                        <a href="{{ url('/blog?slug=' . ($data->blog_slug ?? '#')) }}" class="read-more">Read more</a>
                     </div>
                 </article>
                 @endforeach
@@ -1635,7 +1637,7 @@
                 <h3>Company Information</h3>
                 <ul>
                     <li><a href="{{url('about')}}">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{url('about')}}">Contact</a></li>
                 </ul>
             </div>
 
